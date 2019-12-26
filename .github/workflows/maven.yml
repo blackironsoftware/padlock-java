@@ -14,12 +14,20 @@ jobs:
       with:
         java-version: 1.8
 
-    - name: setup-maven-settings
-      uses: s4u/maven-settings-action@v1
-      with:
-        servers: '[{"id": "github", "username": "x-access-token", "password": "${GITHUB_TOKEN}"}]'
-
-    - name: Build with Maven
+    - name: Deploy to Github Package Registry
       env:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/blackironsoftware  -Dmaven.wagon.http.pool=false -Dmaven.javadoc.skip=true --file pom.xml
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        mkdir ~/.m2
+        echo "<settings><servers><server><id>github</id><username>OWNER</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
+        mvn deploy -Dmaven.wagon.http.pool=false -Dmaven.javadoc.skip=true --file pom.xml
+
+    # - name: setup-maven-settings
+    #   uses: s4u/maven-settings-action@v1
+    #   with:
+    #     servers: '[{"id": "github", "username": "x-access-token", "password": "${GITHUB_TOKEN}"}]'
+
+    # - name: Build with Maven
+    #   env:
+    #     repo-token: ${{ secrets.GITHUB_TOKEN }}
+    #   run: mvn deploy -Dregistry=https://maven.pkg.github.com/blackironsoftware  -Dmaven.wagon.http.pool=false -Dmaven.javadoc.skip=true --file pom.xml
