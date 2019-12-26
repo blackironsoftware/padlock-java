@@ -31,6 +31,14 @@
         </developer>
     </developers>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub blackironsoftware Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/blackironsoftware/padlock-java</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
