@@ -23,62 +23,65 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.Cell;
 
 /**
- * AuthenticateInput
+ * Cells
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T16:41:05.426502-05:00[America/Toronto]")
-public class AuthenticateInput {
-  public static final String SERIALIZED_NAME_USERNAME = "username";
-  @SerializedName(SERIALIZED_NAME_USERNAME)
-  private String username;
+public class Cells {
+  public static final String SERIALIZED_NAME_NEXT_PAGE_TOKEN = "nextPageToken";
+  @SerializedName(SERIALIZED_NAME_NEXT_PAGE_TOKEN)
+  private String nextPageToken;
 
-  public static final String SERIALIZED_NAME_PASSWORD = "password";
-  @SerializedName(SERIALIZED_NAME_PASSWORD)
-  private String password;
+  public static final String SERIALIZED_NAME_ITEMS = "items";
+  @SerializedName(SERIALIZED_NAME_ITEMS)
+  private Cell items;
 
 
-  public AuthenticateInput username(String username) {
+  public Cells nextPageToken(String nextPageToken) {
     
-    this.username = username;
+    this.nextPageToken = nextPageToken;
     return this;
   }
 
    /**
-   * Get username
-   * @return username
+   * Get nextPageToken
+   * @return nextPageToken
   **/
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
-  public String getUsername() {
-    return username;
+  public String getNextPageToken() {
+    return nextPageToken;
   }
 
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setNextPageToken(String nextPageToken) {
+    this.nextPageToken = nextPageToken;
   }
 
 
-  public AuthenticateInput password(String password) {
+  public Cells items(Cell items) {
     
-    this.password = password;
+    this.items = items;
     return this;
   }
 
    /**
-   * Get password
-   * @return password
+   * Get items
+   * @return items
   **/
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
-  public String getPassword() {
-    return password;
+  public Cell getItems() {
+    return items;
   }
 
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setItems(Cell items) {
+    this.items = items;
   }
 
 
@@ -90,23 +93,23 @@ public class AuthenticateInput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AuthenticateInput authenticateInput = (AuthenticateInput) o;
-    return Objects.equals(this.username, authenticateInput.username) &&
-        Objects.equals(this.password, authenticateInput.password);
+    Cells cells = (Cells) o;
+    return Objects.equals(this.nextPageToken, cells.nextPageToken) &&
+        Objects.equals(this.items, cells.items);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(username, password);
+    return Objects.hash(nextPageToken, items);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AuthenticateInput {\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("class Cells {\n");
+    sb.append("    nextPageToken: ").append(toIndentedString(nextPageToken)).append("\n");
+    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("}");
     return sb.toString();
   }
