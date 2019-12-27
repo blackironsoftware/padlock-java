@@ -1,6 +1,6 @@
 # IdentitiesApi
 
-All URIs are relative to *http://localhost:8005*
+All URIs are relative to *https://api.dev.blackironsoftware.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,7 +26,7 @@ import org.openapitools.client.api.IdentitiesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8005");
+    defaultClient.setBasePath("https://api.dev.blackironsoftware.com");
     
     // Configure HTTP bearer authorization: bearerAuth
     HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");

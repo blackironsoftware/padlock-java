@@ -53,7 +53,7 @@ import org.openapitools.client.auth.ApiKeyAuth;
 
 public class ApiClient {
 
-    private String basePath = "http://localhost:8005";
+    private String basePath = "https://api.dev.blackironsoftware.com";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private Map<String, String> defaultCookieMap = new HashMap<String, String>();
@@ -115,7 +115,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g http://localhost:8005
+     * @param basePath Base path of the URL (e.g https://api.dev.blackironsoftware.com
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
