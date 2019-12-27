@@ -71,7 +71,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful request |  -  |
+**200** |  |  -  |
 **400** | The request was unacceptable, often due to missing a required parameter. |  -  |
 **500** | Something went wrong on Black Iron Software&#39;s end. (These are rare.) |  -  |
 

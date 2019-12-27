@@ -65,7 +65,7 @@ public class IdentitiesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful request </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> The request was unacceptable, often due to missing a required parameter. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Something went wrong on Black Iron Software&#39;s end. (These are rare.) </td><td>  -  </td></tr>
      </table>
@@ -123,7 +123,7 @@ public class IdentitiesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful request </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> The request was unacceptable, often due to missing a required parameter. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Something went wrong on Black Iron Software&#39;s end. (These are rare.) </td><td>  -  </td></tr>
      </table>
@@ -142,7 +142,7 @@ public class IdentitiesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful request </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> The request was unacceptable, often due to missing a required parameter. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Something went wrong on Black Iron Software&#39;s end. (These are rare.) </td><td>  -  </td></tr>
      </table>
@@ -163,7 +163,7 @@ public class IdentitiesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful request </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> The request was unacceptable, often due to missing a required parameter. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Something went wrong on Black Iron Software&#39;s end. (These are rare.) </td><td>  -  </td></tr>
      </table>
