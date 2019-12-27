@@ -28,7 +28,7 @@ import java.io.IOException;
  * Every error is the system is returned via an error object.
  */
 @ApiModel(description = "Every error is the system is returned via an error object.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T17:14:40.388222-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T17:41:55.420485-05:00[America/Toronto]")
 public class Error {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
