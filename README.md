@@ -1,4 +1,4 @@
 # padlock-java
 Java library for Padlock
 
-Test
+ mvn deploy -Dregistry=https://maven.pkg.github.com/blackironsoftware -Dmaven.wagon.http.pool=false -Dmaven.javadoc.skip=true --file pom.xml
