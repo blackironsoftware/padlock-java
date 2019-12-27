@@ -29,7 +29,7 @@ import org.openapitools.client.model.Contact;
 /**
  * CreateCellInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T17:41:55.420485-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T18:09:04.654884-05:00[America/Toronto]")
 public class CreateCellInput {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
