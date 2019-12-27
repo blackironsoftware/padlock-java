@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="authenticate"></a>
 # **authenticate**
-> authenticate(cellId, authenticateInput)
+> AuthenticateOutput authenticate(cellId, authenticateInput)
 
 Authenticates an identity
 
@@ -36,7 +36,8 @@ public class Example {
     String cellId = "cellId_example"; // String | Cell ID
     AuthenticateInput authenticateInput = new AuthenticateInput(); // AuthenticateInput | 
     try {
-      apiInstance.authenticate(cellId, authenticateInput);
+      AuthenticateOutput result = apiInstance.authenticate(cellId, authenticateInput);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling IdentitiesApi#authenticate");
       System.err.println("Status code: " + e.getCode());
@@ -57,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**AuthenticateOutput**](AuthenticateOutput.md)
 
 ### Authorization
 
@@ -71,7 +72,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | Everything worked as expected. |  -  |
 **400** | The request was unacceptable, often due to missing a required parameter. |  -  |
 **500** | Something went wrong on Black Iron Software&#39;s end. (These are rare.) |  -  |
 

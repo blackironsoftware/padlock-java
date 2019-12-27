@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
  * Access key and secret.
  */
 @ApiModel(description = "Access key and secret.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T15:17:38.839895-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T15:27:35.996890-05:00[America/Toronto]")
 public class InlineResponse201 {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)

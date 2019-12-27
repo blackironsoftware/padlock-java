@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.AuthenticateInput;
+import org.openapitools.client.model.AuthenticateOutput;
 import org.openapitools.client.model.Error;
 
 import java.lang.reflect.Type;
@@ -65,7 +66,7 @@ public class IdentitiesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Everything worked as expected. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> The request was unacceptable, often due to missing a required parameter. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Something went wrong on Black Iron Software&#39;s end. (These are rare.) </td><td>  -  </td></tr>
      </table>
@@ -119,17 +120,19 @@ public class IdentitiesApi {
      * 
      * @param cellId Cell ID (required)
      * @param authenticateInput  (optional)
+     * @return AuthenticateOutput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Everything worked as expected. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> The request was unacceptable, often due to missing a required parameter. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Something went wrong on Black Iron Software&#39;s end. (These are rare.) </td><td>  -  </td></tr>
      </table>
      */
-    public void authenticate(String cellId, AuthenticateInput authenticateInput) throws ApiException {
-        authenticateWithHttpInfo(cellId, authenticateInput);
+    public AuthenticateOutput authenticate(String cellId, AuthenticateInput authenticateInput) throws ApiException {
+        ApiResponse<AuthenticateOutput> localVarResp = authenticateWithHttpInfo(cellId, authenticateInput);
+        return localVarResp.getData();
     }
 
     /**
@@ -137,19 +140,20 @@ public class IdentitiesApi {
      * 
      * @param cellId Cell ID (required)
      * @param authenticateInput  (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;AuthenticateOutput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Everything worked as expected. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> The request was unacceptable, often due to missing a required parameter. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Something went wrong on Black Iron Software&#39;s end. (These are rare.) </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> authenticateWithHttpInfo(String cellId, AuthenticateInput authenticateInput) throws ApiException {
+    public ApiResponse<AuthenticateOutput> authenticateWithHttpInfo(String cellId, AuthenticateInput authenticateInput) throws ApiException {
         okhttp3.Call localVarCall = authenticateValidateBeforeCall(cellId, authenticateInput, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<AuthenticateOutput>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -163,15 +167,16 @@ public class IdentitiesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Everything worked as expected. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> The request was unacceptable, often due to missing a required parameter. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Something went wrong on Black Iron Software&#39;s end. (These are rare.) </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call authenticateAsync(String cellId, AuthenticateInput authenticateInput, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call authenticateAsync(String cellId, AuthenticateInput authenticateInput, final ApiCallback<AuthenticateOutput> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = authenticateValidateBeforeCall(cellId, authenticateInput, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<AuthenticateOutput>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 }

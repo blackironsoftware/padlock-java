@@ -15,6 +15,7 @@ package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
 import org.openapitools.client.model.AuthenticateInput;
+import org.openapitools.client.model.AuthenticateOutput;
 import org.openapitools.client.model.Error;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -45,7 +46,7 @@ public class IdentitiesApiTest {
     public void authenticateTest() throws ApiException {
         String cellId = null;
         AuthenticateInput authenticateInput = null;
-        api.authenticate(cellId, authenticateInput);
+        AuthenticateOutput response = api.authenticate(cellId, authenticateInput);
 
         // TODO: test validations
     }
