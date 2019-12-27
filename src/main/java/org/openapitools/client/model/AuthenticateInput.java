@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * AuthenticateInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T16:41:05.426502-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T17:14:40.388222-05:00[America/Toronto]")
 public class AuthenticateInput {
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)

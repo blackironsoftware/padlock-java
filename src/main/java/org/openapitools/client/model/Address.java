@@ -28,7 +28,7 @@ import java.io.IOException;
  * The main contact or mailing address for the entity.
  */
 @ApiModel(description = "The main contact or mailing address for the entity.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T16:41:05.426502-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T17:14:40.388222-05:00[America/Toronto]")
 public class Address {
   public static final String SERIALIZED_NAME_LINE1 = "line1";
   @SerializedName(SERIALIZED_NAME_LINE1)

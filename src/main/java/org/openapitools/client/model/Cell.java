@@ -32,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
  * A cell is the top-level entity in Cell Block. Each tenant is represented by a cell.
  */
 @ApiModel(description = "A cell is the top-level entity in Cell Block. Each tenant is represented by a cell.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T16:41:05.426502-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T17:14:40.388222-05:00[America/Toronto]")
 public class Cell {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

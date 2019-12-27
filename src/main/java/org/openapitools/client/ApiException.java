@@ -16,7 +16,7 @@ package org.openapitools.client;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T16:41:05.426502-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T17:14:40.388222-05:00[America/Toronto]")
 public class ApiException extends Exception {
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;
