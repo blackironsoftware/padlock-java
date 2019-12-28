@@ -13,7 +13,6 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
 import org.openapitools.client.model.Cell;
 import org.openapitools.client.model.Cells;
 import org.openapitools.client.model.CreateCellInput;
@@ -39,14 +38,11 @@ public class CellsApiTest {
      * Create a cell
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void createCellTest() throws ApiException {
+    public void createCellTest()  {
         CreateCellInput createCellInput = null;
-        Cell response = api.createCell(createCellInput);
+        Cell response = api.createCell(createCellInput).block();
 
         // TODO: test validations
     }
@@ -55,14 +51,11 @@ public class CellsApiTest {
      * Deletes a cell
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void deleteCellTest() throws ApiException {
+    public void deleteCellTest()  {
         String cellId = null;
-        api.deleteCell(cellId);
+        api.deleteCell(cellId).block();
 
         // TODO: test validations
     }
@@ -71,14 +64,11 @@ public class CellsApiTest {
      * Retrieve a cell
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void getCellTest() throws ApiException {
+    public void getCellTest()  {
         String cellId = null;
-        Cell response = api.getCell(cellId);
+        Cell response = api.getCell(cellId).block();
 
         // TODO: test validations
     }
@@ -87,15 +77,12 @@ public class CellsApiTest {
      * Retrieves a list of cells
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void listCellsTest() throws ApiException {
+    public void listCellsTest()  {
         Integer pageSize = null;
         String pageToken = null;
-        Cells response = api.listCells(pageSize, pageToken);
+        Cells response = api.listCells(pageSize, pageToken).block();
 
         // TODO: test validations
     }
@@ -104,15 +91,12 @@ public class CellsApiTest {
      * Update a cell
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void updateCellTest() throws ApiException {
+    public void updateCellTest()  {
         String cellId = null;
         Cell cell = null;
-        Cell response = api.updateCell(cellId, cell);
+        Cell response = api.updateCell(cellId, cell).block();
 
         // TODO: test validations
     }

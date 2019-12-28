@@ -13,7 +13,6 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
 import org.openapitools.client.model.AuthenticateInput;
 import org.openapitools.client.model.AuthenticateOutput;
 import org.openapitools.client.model.Error;
@@ -38,15 +37,12 @@ public class IdentitiesApiTest {
      * Authenticates an identity
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void authenticateTest() throws ApiException {
+    public void authenticateTest()  {
         String cellId = null;
         AuthenticateInput authenticateInput = null;
-        AuthenticateOutput response = api.authenticate(cellId, authenticateInput);
+        AuthenticateOutput response = api.authenticate(cellId, authenticateInput).block();
 
         // TODO: test validations
     }
