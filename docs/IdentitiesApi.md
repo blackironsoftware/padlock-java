@@ -18,11 +18,11 @@ Authenticates an identity
 
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.IdentitiesApi;
+import com.blackironsoftware.ApiClient;
+import com.blackironsoftware.ApiException;
+import com.blackironsoftware.Configuration;
+import com.blackironsoftware.models.*;
+import com.blackironsoftware.api.IdentitiesApi;
 
 public class Example {
     public static void main(String[] args) {

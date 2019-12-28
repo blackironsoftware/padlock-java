@@ -22,12 +22,12 @@ Create a cell
 
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.CellsApi;
+import com.blackironsoftware.ApiClient;
+import com.blackironsoftware.ApiException;
+import com.blackironsoftware.Configuration;
+import com.blackironsoftware.auth.*;
+import com.blackironsoftware.models.*;
+import com.blackironsoftware.api.CellsApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -94,12 +94,12 @@ Deletes a cell
 
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.CellsApi;
+import com.blackironsoftware.ApiClient;
+import com.blackironsoftware.ApiException;
+import com.blackironsoftware.Configuration;
+import com.blackironsoftware.auth.*;
+import com.blackironsoftware.models.*;
+import com.blackironsoftware.api.CellsApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -165,12 +165,12 @@ Retrieve a cell
 
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.CellsApi;
+import com.blackironsoftware.ApiClient;
+import com.blackironsoftware.ApiException;
+import com.blackironsoftware.Configuration;
+import com.blackironsoftware.auth.*;
+import com.blackironsoftware.models.*;
+import com.blackironsoftware.api.CellsApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -237,12 +237,12 @@ Retrieves a list of cells
 
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.CellsApi;
+import com.blackironsoftware.ApiClient;
+import com.blackironsoftware.ApiException;
+import com.blackironsoftware.Configuration;
+import com.blackironsoftware.auth.*;
+import com.blackironsoftware.models.*;
+import com.blackironsoftware.api.CellsApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -310,12 +310,12 @@ Update a cell
 
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.CellsApi;
+import com.blackironsoftware.ApiClient;
+import com.blackironsoftware.ApiException;
+import com.blackironsoftware.Configuration;
+import com.blackironsoftware.auth.*;
+import com.blackironsoftware.models.*;
+import com.blackironsoftware.api.CellsApi;
 
 public class Example {
     public static void main(String[] args) {
