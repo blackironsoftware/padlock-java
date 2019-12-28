@@ -15,7 +15,7 @@ package com.blackironsoftware.api.models;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.blackironsoftware.api.models.Cell;
+import com.blackironsoftware.api.models.Client;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -27,22 +27,22 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * Cells
+ * Clients
  */
 @JsonPropertyOrder({
-  Cells.JSON_PROPERTY_NEXT_PAGE_TOKEN,
-  Cells.JSON_PROPERTY_ITEMS
+  Clients.JSON_PROPERTY_NEXT_PAGE_TOKEN,
+  Clients.JSON_PROPERTY_ITEMS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-28T17:34:42.919964-05:00[America/Toronto]")
-public class Cells {
+public class Clients {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
   private String nextPageToken;
 
   public static final String JSON_PROPERTY_ITEMS = "items";
-  private List<Cell> items = null;
+  private List<Client> items = null;
 
 
-  public Cells nextPageToken(String nextPageToken) {
+  public Clients nextPageToken(String nextPageToken) {
     
     this.nextPageToken = nextPageToken;
     return this;
@@ -67,15 +67,15 @@ public class Cells {
   }
 
 
-  public Cells items(List<Cell> items) {
+  public Clients items(List<Client> items) {
     
     this.items = items;
     return this;
   }
 
-  public Cells addItemsItem(Cell itemsItem) {
+  public Clients addItemsItem(Client itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<Cell>();
+      this.items = new ArrayList<Client>();
     }
     this.items.add(itemsItem);
     return this;
@@ -90,12 +90,12 @@ public class Cells {
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<Cell> getItems() {
+  public List<Client> getItems() {
     return items;
   }
 
 
-  public void setItems(List<Cell> items) {
+  public void setItems(List<Client> items) {
     this.items = items;
   }
 
@@ -108,9 +108,9 @@ public class Cells {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Cells cells = (Cells) o;
-    return Objects.equals(this.nextPageToken, cells.nextPageToken) &&
-        Objects.equals(this.items, cells.items);
+    Clients clients = (Clients) o;
+    return Objects.equals(this.nextPageToken, clients.nextPageToken) &&
+        Objects.equals(this.items, clients.items);
   }
 
   @Override
@@ -122,7 +122,7 @@ public class Cells {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Cells {\n");
+    sb.append("class Clients {\n");
     sb.append("    nextPageToken: ").append(toIndentedString(nextPageToken)).append("\n");
     sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("}");

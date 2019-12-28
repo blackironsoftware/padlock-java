@@ -26,21 +26,26 @@ import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * CreateCellInput
+ * Clients represent an entity that a cell provides services to. This could be an individual or company.
  */
+@ApiModel(description = "Clients represent an entity that a cell provides services to. This could be an individual or company.")
 @JsonPropertyOrder({
-  CreateCellInput.JSON_PROPERTY_NAME,
-  CreateCellInput.JSON_PROPERTY_METADATA,
-  CreateCellInput.JSON_PROPERTY_CONTACT,
-  CreateCellInput.JSON_PROPERTY_ADDRESS
+  CreateClientInput.JSON_PROPERTY_NAME,
+  CreateClientInput.JSON_PROPERTY_DOING_BUSINESS_AS,
+  CreateClientInput.JSON_PROPERTY_LEGAL_NAME,
+  CreateClientInput.JSON_PROPERTY_CONTACT,
+  CreateClientInput.JSON_PROPERTY_ADDRESS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-28T17:34:42.919964-05:00[America/Toronto]")
-public class CreateCellInput {
+public class CreateClientInput {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public static final String JSON_PROPERTY_METADATA = "metadata";
-  private Object metadata;
+  public static final String JSON_PROPERTY_DOING_BUSINESS_AS = "doingBusinessAs";
+  private String doingBusinessAs;
+
+  public static final String JSON_PROPERTY_LEGAL_NAME = "legalName";
+  private String legalName;
 
   public static final String JSON_PROPERTY_CONTACT = "contact";
   private Contact contact;
@@ -49,7 +54,7 @@ public class CreateCellInput {
   private Address address;
 
 
-  public CreateCellInput name(String name) {
+  public CreateClientInput name(String name) {
     
     this.name = name;
     return this;
@@ -59,9 +64,10 @@ public class CreateCellInput {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(example = "Black Iron Software", required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Black Iron Software", value = "")
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -73,32 +79,57 @@ public class CreateCellInput {
   }
 
 
-  public CreateCellInput metadata(Object metadata) {
+  public CreateClientInput doingBusinessAs(String doingBusinessAs) {
     
-    this.metadata = metadata;
+    this.doingBusinessAs = doingBusinessAs;
     return this;
   }
 
    /**
-   * Holds any valid JSON object up to 2KB in length. Field can be used to store application specific values or configuration.
-   * @return metadata
+   * Get doingBusinessAs
+   * @return doingBusinessAs
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Holds any valid JSON object up to 2KB in length. Field can be used to store application specific values or configuration.")
-  @JsonProperty(JSON_PROPERTY_METADATA)
+  @ApiModelProperty(example = "BIS", value = "")
+  @JsonProperty(JSON_PROPERTY_DOING_BUSINESS_AS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Object getMetadata() {
-    return metadata;
+  public String getDoingBusinessAs() {
+    return doingBusinessAs;
   }
 
 
-  public void setMetadata(Object metadata) {
-    this.metadata = metadata;
+  public void setDoingBusinessAs(String doingBusinessAs) {
+    this.doingBusinessAs = doingBusinessAs;
   }
 
 
-  public CreateCellInput contact(Contact contact) {
+  public CreateClientInput legalName(String legalName) {
+    
+    this.legalName = legalName;
+    return this;
+  }
+
+   /**
+   * Get legalName
+   * @return legalName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Black Iron Software, INC.", value = "")
+  @JsonProperty(JSON_PROPERTY_LEGAL_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getLegalName() {
+    return legalName;
+  }
+
+
+  public void setLegalName(String legalName) {
+    this.legalName = legalName;
+  }
+
+
+  public CreateClientInput contact(Contact contact) {
     
     this.contact = contact;
     return this;
@@ -123,7 +154,7 @@ public class CreateCellInput {
   }
 
 
-  public CreateCellInput address(Address address) {
+  public CreateClientInput address(Address address) {
     
     this.address = address;
     return this;
@@ -156,25 +187,27 @@ public class CreateCellInput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateCellInput createCellInput = (CreateCellInput) o;
-    return Objects.equals(this.name, createCellInput.name) &&
-        Objects.equals(this.metadata, createCellInput.metadata) &&
-        Objects.equals(this.contact, createCellInput.contact) &&
-        Objects.equals(this.address, createCellInput.address);
+    CreateClientInput createClientInput = (CreateClientInput) o;
+    return Objects.equals(this.name, createClientInput.name) &&
+        Objects.equals(this.doingBusinessAs, createClientInput.doingBusinessAs) &&
+        Objects.equals(this.legalName, createClientInput.legalName) &&
+        Objects.equals(this.contact, createClientInput.contact) &&
+        Objects.equals(this.address, createClientInput.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, metadata, contact, address);
+    return Objects.hash(name, doingBusinessAs, legalName, contact, address);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateCellInput {\n");
+    sb.append("class CreateClientInput {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    doingBusinessAs: ").append(toIndentedString(doingBusinessAs)).append("\n");
+    sb.append("    legalName: ").append(toIndentedString(legalName)).append("\n");
     sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");

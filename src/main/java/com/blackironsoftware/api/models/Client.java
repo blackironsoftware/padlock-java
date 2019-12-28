@@ -15,58 +15,67 @@ package com.blackironsoftware.api.models;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.blackironsoftware.api.models.Address;
+import com.blackironsoftware.api.models.Contact;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.UUID;
 import org.threeten.bp.OffsetDateTime;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * Roles represent an entity that define permissions that can be granted to a user.
+ * Clients represent an entity that a cell provides services to. This could be an individual or company.
  */
-@ApiModel(description = "Roles represent an entity that define permissions that can be granted to a user.")
+@ApiModel(description = "Clients represent an entity that a cell provides services to. This could be an individual or company.")
 @JsonPropertyOrder({
-  Role.JSON_PROPERTY_ID,
-  Role.JSON_PROPERTY_NAME,
-  Role.JSON_PROPERTY_DESCRIPTION,
-  Role.JSON_PROPERTY_PERMISSIONS,
-  Role.JSON_PROPERTY_CREATE_TIME,
-  Role.JSON_PROPERTY_CREATE_USER,
-  Role.JSON_PROPERTY_UPDATE_TIME,
-  Role.JSON_PROPERTY_UPDATE_USER
+  Client.JSON_PROPERTY_ID,
+  Client.JSON_PROPERTY_NAME,
+  Client.JSON_PROPERTY_DOING_BUSINESS_AS,
+  Client.JSON_PROPERTY_LEGAL_NAME,
+  Client.JSON_PROPERTY_CONTACT,
+  Client.JSON_PROPERTY_ADDRESS,
+  Client.JSON_PROPERTY_CREATE_TIME,
+  Client.JSON_PROPERTY_CREATE_USER,
+  Client.JSON_PROPERTY_UPDATE_TIME,
+  Client.JSON_PROPERTY_UPDATE_USER
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-28T17:34:42.919964-05:00[America/Toronto]")
-public class Role {
+public class Client {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
-  private String description;
+  public static final String JSON_PROPERTY_DOING_BUSINESS_AS = "doingBusinessAs";
+  private String doingBusinessAs;
 
-  public static final String JSON_PROPERTY_PERMISSIONS = "permissions";
-  private String permissions;
+  public static final String JSON_PROPERTY_LEGAL_NAME = "legalName";
+  private String legalName;
+
+  public static final String JSON_PROPERTY_CONTACT = "contact";
+  private Contact contact;
+
+  public static final String JSON_PROPERTY_ADDRESS = "address";
+  private Address address;
 
   public static final String JSON_PROPERTY_CREATE_TIME = "createTime";
   private OffsetDateTime createTime;
 
   public static final String JSON_PROPERTY_CREATE_USER = "createUser";
-  private UUID createUser;
+  private String createUser;
 
   public static final String JSON_PROPERTY_UPDATE_TIME = "updateTime";
   private OffsetDateTime updateTime;
 
   public static final String JSON_PROPERTY_UPDATE_USER = "updateUser";
-  private UUID updateUser;
+  private String updateUser;
 
 
-  public Role id(String id) {
+  public Client id(String id) {
     
     this.id = id;
     return this;
@@ -91,7 +100,7 @@ public class Role {
   }
 
 
-  public Role name(String name) {
+  public Client name(String name) {
     
     this.name = name;
     return this;
@@ -102,7 +111,7 @@ public class Role {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "Black Iron Software", value = "")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -116,53 +125,103 @@ public class Role {
   }
 
 
-  public Role description(String description) {
+  public Client doingBusinessAs(String doingBusinessAs) {
     
-    this.description = description;
+    this.doingBusinessAs = doingBusinessAs;
     return this;
   }
 
    /**
-   * Get description
-   * @return description
+   * Get doingBusinessAs
+   * @return doingBusinessAs
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @ApiModelProperty(example = "BIS", value = "")
+  @JsonProperty(JSON_PROPERTY_DOING_BUSINESS_AS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getDescription() {
-    return description;
+  public String getDoingBusinessAs() {
+    return doingBusinessAs;
   }
 
 
-  public void setDescription(String description) {
-    this.description = description;
+  public void setDoingBusinessAs(String doingBusinessAs) {
+    this.doingBusinessAs = doingBusinessAs;
   }
 
 
-  public Role permissions(String permissions) {
+  public Client legalName(String legalName) {
     
-    this.permissions = permissions;
+    this.legalName = legalName;
     return this;
   }
 
    /**
-   * Get permissions
-   * @return permissions
+   * Get legalName
+   * @return legalName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PERMISSIONS)
+  @ApiModelProperty(example = "Black Iron Software, INC.", value = "")
+  @JsonProperty(JSON_PROPERTY_LEGAL_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getPermissions() {
-    return permissions;
+  public String getLegalName() {
+    return legalName;
   }
 
 
-  public void setPermissions(String permissions) {
-    this.permissions = permissions;
+  public void setLegalName(String legalName) {
+    this.legalName = legalName;
+  }
+
+
+  public Client contact(Contact contact) {
+    
+    this.contact = contact;
+    return this;
+  }
+
+   /**
+   * Get contact
+   * @return contact
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CONTACT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Contact getContact() {
+    return contact;
+  }
+
+
+  public void setContact(Contact contact) {
+    this.contact = contact;
+  }
+
+
+  public Client address(Address address) {
+    
+    this.address = address;
+    return this;
+  }
+
+   /**
+   * Get address
+   * @return address
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Address getAddress() {
+    return address;
+  }
+
+
+  public void setAddress(Address address) {
+    this.address = address;
   }
 
 
@@ -182,7 +241,7 @@ public class Role {
 
 
 
-  public Role createUser(UUID createUser) {
+  public Client createUser(String createUser) {
     
     this.createUser = createUser;
     return this;
@@ -197,12 +256,12 @@ public class Role {
   @JsonProperty(JSON_PROPERTY_CREATE_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public UUID getCreateUser() {
+  public String getCreateUser() {
     return createUser;
   }
 
 
-  public void setCreateUser(UUID createUser) {
+  public void setCreateUser(String createUser) {
     this.createUser = createUser;
   }
 
@@ -223,7 +282,7 @@ public class Role {
 
 
 
-  public Role updateUser(UUID updateUser) {
+  public Client updateUser(String updateUser) {
     
     this.updateUser = updateUser;
     return this;
@@ -238,12 +297,12 @@ public class Role {
   @JsonProperty(JSON_PROPERTY_UPDATE_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public UUID getUpdateUser() {
+  public String getUpdateUser() {
     return updateUser;
   }
 
 
-  public void setUpdateUser(UUID updateUser) {
+  public void setUpdateUser(String updateUser) {
     this.updateUser = updateUser;
   }
 
@@ -256,31 +315,35 @@ public class Role {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Role role = (Role) o;
-    return Objects.equals(this.id, role.id) &&
-        Objects.equals(this.name, role.name) &&
-        Objects.equals(this.description, role.description) &&
-        Objects.equals(this.permissions, role.permissions) &&
-        Objects.equals(this.createTime, role.createTime) &&
-        Objects.equals(this.createUser, role.createUser) &&
-        Objects.equals(this.updateTime, role.updateTime) &&
-        Objects.equals(this.updateUser, role.updateUser);
+    Client client = (Client) o;
+    return Objects.equals(this.id, client.id) &&
+        Objects.equals(this.name, client.name) &&
+        Objects.equals(this.doingBusinessAs, client.doingBusinessAs) &&
+        Objects.equals(this.legalName, client.legalName) &&
+        Objects.equals(this.contact, client.contact) &&
+        Objects.equals(this.address, client.address) &&
+        Objects.equals(this.createTime, client.createTime) &&
+        Objects.equals(this.createUser, client.createUser) &&
+        Objects.equals(this.updateTime, client.updateTime) &&
+        Objects.equals(this.updateUser, client.updateUser);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, permissions, createTime, createUser, updateTime, updateUser);
+    return Objects.hash(id, name, doingBusinessAs, legalName, contact, address, createTime, createUser, updateTime, updateUser);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Role {\n");
+    sb.append("class Client {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    sb.append("    doingBusinessAs: ").append(toIndentedString(doingBusinessAs)).append("\n");
+    sb.append("    legalName: ").append(toIndentedString(legalName)).append("\n");
+    sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
     sb.append("    createUser: ").append(toIndentedString(createUser)).append("\n");
     sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

@@ -7,10 +7,10 @@ import com.blackironsoftware.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import com.blackironsoftware.api.models.CreateRoleInput;
+import com.blackironsoftware.api.models.Client;
+import com.blackironsoftware.api.models.Clients;
+import com.blackironsoftware.api.models.CreateClientInput;
 import com.blackironsoftware.api.models.Error;
-import com.blackironsoftware.api.models.Role;
-import com.blackironsoftware.api.models.Roles;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,14 +18,14 @@ import java.util.List;
 import java.util.Map;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-28T17:34:42.919964-05:00[America/Toronto]")
-public class RolesApi {
+public class ClientsApi {
   private ApiClient apiClient;
 
-  public RolesApi() {
+  public ClientsApi() {
     this(Configuration.getDefaultApiClient());
   }
 
-  public RolesApi(ApiClient apiClient) {
+  public ClientsApi(ApiClient apiClient) {
     this.apiClient = apiClient;
   }
 
@@ -38,28 +38,23 @@ public class RolesApi {
   }
 
   /**
-   * Create a role
+   * Create a client
    * 
    * @param cellId Cell ID (required)
-   * @param createRoleInput Role resource (required)
-   * @return a {@code Role}
+   * @param createClientInput  (optional)
+   * @return a {@code Client}
    * @throws ApiException if fails to make API call
    */
-  public Role createRole(String cellId, CreateRoleInput createRoleInput) throws ApiException {
-    Object localVarPostBody = createRoleInput;
+  public Client createClient(String cellId, CreateClientInput createClientInput) throws ApiException {
+    Object localVarPostBody = createClientInput;
     
     // verify the required parameter 'cellId' is set
     if (cellId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cellId' when calling createRole");
-    }
-    
-    // verify the required parameter 'createRoleInput' is set
-    if (createRoleInput == null) {
-      throw new ApiException(400, "Missing the required parameter 'createRoleInput' when calling createRole");
+      throw new ApiException(400, "Missing the required parameter 'cellId' when calling createClient");
     }
     
     // create path and map variables
-    String localVarPath = "/cells/{cellId}/roles".replaceAll("\\{format\\}","json")
+    String localVarPath = "/cells/{cellId}/clients".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()));
 
     // query params
@@ -84,33 +79,33 @@ public class RolesApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Role> localVarReturnType = new GenericType<Role>() {};
+    GenericType<Client> localVarReturnType = new GenericType<Client>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
   /**
-   * Deletes a role and dissociates all users from the role.
+   * Deletes a client
    * 
    * @param cellId Cell ID (required)
-   * @param roleId Role ID (required)
+   * @param clientId Client ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRole(String cellId, String roleId) throws ApiException {
+  public void deleteClient(String cellId, String clientId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'cellId' is set
     if (cellId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cellId' when calling deleteRole");
+      throw new ApiException(400, "Missing the required parameter 'cellId' when calling deleteClient");
     }
     
-    // verify the required parameter 'roleId' is set
-    if (roleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'roleId' when calling deleteRole");
+    // verify the required parameter 'clientId' is set
+    if (clientId == null) {
+      throw new ApiException(400, "Missing the required parameter 'clientId' when calling deleteClient");
     }
     
     // create path and map variables
-    String localVarPath = "/cells/{cellId}/roles/{roleId}".replaceAll("\\{format\\}","json")
+    String localVarPath = "/cells/{cellId}/clients/{clientId}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()))
-      .replaceAll("\\{" + "roleId" + "\\}", apiClient.escapeString(roleId.toString()));
+      .replaceAll("\\{" + "clientId" + "\\}", apiClient.escapeString(clientId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -138,30 +133,30 @@ public class RolesApi {
     apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
   }
   /**
-   * Retrieve a role
+   * Retrieve a client
    * 
    * @param cellId Cell ID (required)
-   * @param roleId Role ID (required)
-   * @return a {@code Role}
+   * @param clientId Client ID (required)
+   * @return a {@code Client}
    * @throws ApiException if fails to make API call
    */
-  public Role getRole(String cellId, String roleId) throws ApiException {
+  public Client getClient(String cellId, String clientId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'cellId' is set
     if (cellId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cellId' when calling getRole");
+      throw new ApiException(400, "Missing the required parameter 'cellId' when calling getClient");
     }
     
-    // verify the required parameter 'roleId' is set
-    if (roleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'roleId' when calling getRole");
+    // verify the required parameter 'clientId' is set
+    if (clientId == null) {
+      throw new ApiException(400, "Missing the required parameter 'clientId' when calling getClient");
     }
     
     // create path and map variables
-    String localVarPath = "/cells/{cellId}/roles/{roleId}".replaceAll("\\{format\\}","json")
+    String localVarPath = "/cells/{cellId}/clients/{clientId}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()))
-      .replaceAll("\\{" + "roleId" + "\\}", apiClient.escapeString(roleId.toString()));
+      .replaceAll("\\{" + "clientId" + "\\}", apiClient.escapeString(clientId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -185,26 +180,26 @@ public class RolesApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Role> localVarReturnType = new GenericType<Role>() {};
+    GenericType<Client> localVarReturnType = new GenericType<Client>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
   /**
-   * Retrieves a list of roles
+   * Retrieves a list of clients
    * 
    * @param cellId Cell ID (required)
-   * @return a {@code Roles}
+   * @return a {@code Clients}
    * @throws ApiException if fails to make API call
    */
-  public Roles listRoles(String cellId) throws ApiException {
+  public Clients listClients(String cellId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'cellId' is set
     if (cellId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cellId' when calling listRoles");
+      throw new ApiException(400, "Missing the required parameter 'cellId' when calling listClients");
     }
     
     // create path and map variables
-    String localVarPath = "/cells/{cellId}/roles".replaceAll("\\{format\\}","json")
+    String localVarPath = "/cells/{cellId}/clients".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()));
 
     // query params
@@ -229,7 +224,64 @@ public class RolesApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Roles> localVarReturnType = new GenericType<Roles>() {};
+    GenericType<Clients> localVarReturnType = new GenericType<Clients>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * Update a client
+   * 
+   * @param cellId Cell ID (required)
+   * @param clientId Client ID (required)
+   * @param client Client resource (required)
+   * @return a {@code Client}
+   * @throws ApiException if fails to make API call
+   */
+  public Client updateClient(String cellId, String clientId, Client client) throws ApiException {
+    Object localVarPostBody = client;
+    
+    // verify the required parameter 'cellId' is set
+    if (cellId == null) {
+      throw new ApiException(400, "Missing the required parameter 'cellId' when calling updateClient");
+    }
+    
+    // verify the required parameter 'clientId' is set
+    if (clientId == null) {
+      throw new ApiException(400, "Missing the required parameter 'clientId' when calling updateClient");
+    }
+    
+    // verify the required parameter 'client' is set
+    if (client == null) {
+      throw new ApiException(400, "Missing the required parameter 'client' when calling updateClient");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/cells/{cellId}/clients/{clientId}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()))
+      .replaceAll("\\{" + "clientId" + "\\}", apiClient.escapeString(clientId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<Client> localVarReturnType = new GenericType<Client>() {};
+    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
 }
