@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nextPageToken** | **String** |  |  [optional]
-**items** | [**Cell**](Cell.md) |  |  [optional]
+**items** | [**List&lt;Cell&gt;**](Cell.md) |  |  [optional]
 
 
 

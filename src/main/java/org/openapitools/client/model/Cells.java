@@ -23,12 +23,14 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.openapitools.client.model.Cell;
 
 /**
  * Cells
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T18:24:20.984006-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T19:47:01.875545-05:00[America/Toronto]")
 public class Cells {
   public static final String SERIALIZED_NAME_NEXT_PAGE_TOKEN = "nextPageToken";
   @SerializedName(SERIALIZED_NAME_NEXT_PAGE_TOKEN)
@@ -36,7 +38,7 @@ public class Cells {
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
-  private Cell items;
+  private List<Cell> items = null;
 
 
   public Cells nextPageToken(String nextPageToken) {
@@ -62,9 +64,17 @@ public class Cells {
   }
 
 
-  public Cells items(Cell items) {
+  public Cells items(List<Cell> items) {
     
     this.items = items;
+    return this;
+  }
+
+  public Cells addItemsItem(Cell itemsItem) {
+    if (this.items == null) {
+      this.items = new ArrayList<Cell>();
+    }
+    this.items.add(itemsItem);
     return this;
   }
 
@@ -75,12 +85,12 @@ public class Cells {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Cell getItems() {
+  public List<Cell> getItems() {
     return items;
   }
 
 
-  public void setItems(Cell items) {
+  public void setItems(List<Cell> items) {
     this.items = items;
   }
 
