@@ -15,34 +15,35 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Contact
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T19:47:01.875545-05:00[America/Toronto]")
+@JsonPropertyOrder({
+  Contact.JSON_PROPERTY_GIVEN_NAME,
+  Contact.JSON_PROPERTY_SURNAME,
+  Contact.JSON_PROPERTY_EMAIL,
+  Contact.JSON_PROPERTY_PHONE
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T20:04:54.751567-05:00[America/Toronto]")
 public class Contact {
-  public static final String SERIALIZED_NAME_GIVEN_NAME = "givenName";
-  @SerializedName(SERIALIZED_NAME_GIVEN_NAME)
+  public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private String givenName;
 
-  public static final String SERIALIZED_NAME_SURNAME = "surname";
-  @SerializedName(SERIALIZED_NAME_SURNAME)
+  public static final String JSON_PROPERTY_SURNAME = "surname";
   private String surname;
 
-  public static final String SERIALIZED_NAME_EMAIL = "email";
-  @SerializedName(SERIALIZED_NAME_EMAIL)
+  public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
 
-  public static final String SERIALIZED_NAME_PHONE = "phone";
-  @SerializedName(SERIALIZED_NAME_PHONE)
+  public static final String JSON_PROPERTY_PHONE = "phone";
   private String phone;
 
 
@@ -58,6 +59,8 @@ public class Contact {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGivenName() {
     return givenName;
@@ -81,6 +84,8 @@ public class Contact {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SURNAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSurname() {
     return surname;
@@ -104,6 +109,8 @@ public class Contact {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getEmail() {
     return email;
@@ -127,6 +134,8 @@ public class Contact {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PHONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPhone() {
     return phone;

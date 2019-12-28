@@ -15,29 +15,30 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.Cell;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Cells
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T19:47:01.875545-05:00[America/Toronto]")
+@JsonPropertyOrder({
+  Cells.JSON_PROPERTY_NEXT_PAGE_TOKEN,
+  Cells.JSON_PROPERTY_ITEMS
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T20:04:54.751567-05:00[America/Toronto]")
 public class Cells {
-  public static final String SERIALIZED_NAME_NEXT_PAGE_TOKEN = "nextPageToken";
-  @SerializedName(SERIALIZED_NAME_NEXT_PAGE_TOKEN)
+  public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
   private String nextPageToken;
 
-  public static final String SERIALIZED_NAME_ITEMS = "items";
-  @SerializedName(SERIALIZED_NAME_ITEMS)
+  public static final String JSON_PROPERTY_ITEMS = "items";
   private List<Cell> items = null;
 
 
@@ -53,6 +54,8 @@ public class Cells {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNextPageToken() {
     return nextPageToken;
@@ -84,6 +87,8 @@ public class Cells {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ITEMS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<Cell> getItems() {
     return items;

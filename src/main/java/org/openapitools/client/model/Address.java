@@ -15,43 +15,44 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * The main contact or mailing address for the entity.
  */
 @ApiModel(description = "The main contact or mailing address for the entity.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T19:47:01.875545-05:00[America/Toronto]")
+@JsonPropertyOrder({
+  Address.JSON_PROPERTY_LINE1,
+  Address.JSON_PROPERTY_LINE2,
+  Address.JSON_PROPERTY_CITY,
+  Address.JSON_PROPERTY_REGION,
+  Address.JSON_PROPERTY_POSTAL_CODE,
+  Address.JSON_PROPERTY_COUNTRY
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T20:04:54.751567-05:00[America/Toronto]")
 public class Address {
-  public static final String SERIALIZED_NAME_LINE1 = "line1";
-  @SerializedName(SERIALIZED_NAME_LINE1)
+  public static final String JSON_PROPERTY_LINE1 = "line1";
   private String line1;
 
-  public static final String SERIALIZED_NAME_LINE2 = "line2";
-  @SerializedName(SERIALIZED_NAME_LINE2)
+  public static final String JSON_PROPERTY_LINE2 = "line2";
   private String line2;
 
-  public static final String SERIALIZED_NAME_CITY = "city";
-  @SerializedName(SERIALIZED_NAME_CITY)
+  public static final String JSON_PROPERTY_CITY = "city";
   private String city;
 
-  public static final String SERIALIZED_NAME_REGION = "region";
-  @SerializedName(SERIALIZED_NAME_REGION)
+  public static final String JSON_PROPERTY_REGION = "region";
   private String region;
 
-  public static final String SERIALIZED_NAME_POSTAL_CODE = "postalCode";
-  @SerializedName(SERIALIZED_NAME_POSTAL_CODE)
+  public static final String JSON_PROPERTY_POSTAL_CODE = "postalCode";
   private String postalCode;
 
-  public static final String SERIALIZED_NAME_COUNTRY = "country";
-  @SerializedName(SERIALIZED_NAME_COUNTRY)
+  public static final String JSON_PROPERTY_COUNTRY = "country";
   private String country;
 
 
@@ -67,6 +68,8 @@ public class Address {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_LINE1)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLine1() {
     return line1;
@@ -90,6 +93,8 @@ public class Address {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_LINE2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLine2() {
     return line2;
@@ -113,6 +118,8 @@ public class Address {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCity() {
     return city;
@@ -136,6 +143,8 @@ public class Address {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REGION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRegion() {
     return region;
@@ -159,6 +168,8 @@ public class Address {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPostalCode() {
     return postalCode;
@@ -182,6 +193,8 @@ public class Address {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCountry() {
     return country;

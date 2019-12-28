@@ -15,32 +15,33 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import org.threeten.bp.OffsetDateTime;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Access key and secret.
  */
 @ApiModel(description = "Access key and secret.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T19:47:01.875545-05:00[America/Toronto]")
+@JsonPropertyOrder({
+  InlineResponse201.JSON_PROPERTY_KEY,
+  InlineResponse201.JSON_PROPERTY_SECRET,
+  InlineResponse201.JSON_PROPERTY_CREATE_TIME
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T20:04:54.751567-05:00[America/Toronto]")
 public class InlineResponse201 {
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
+  public static final String JSON_PROPERTY_KEY = "key";
   private String key;
 
-  public static final String SERIALIZED_NAME_SECRET = "secret";
-  @SerializedName(SERIALIZED_NAME_SECRET)
+  public static final String JSON_PROPERTY_SECRET = "secret";
   private String secret;
 
-  public static final String SERIALIZED_NAME_CREATE_TIME = "createTime";
-  @SerializedName(SERIALIZED_NAME_CREATE_TIME)
+  public static final String JSON_PROPERTY_CREATE_TIME = "createTime";
   private OffsetDateTime createTime;
 
 
@@ -56,6 +57,8 @@ public class InlineResponse201 {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "D0ALLECXOXUAIJPR0CX8", value = "")
+  @JsonProperty(JSON_PROPERTY_KEY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getKey() {
     return key;
@@ -79,6 +82,8 @@ public class InlineResponse201 {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "3.jukizcG+4bybEapCQy/r0a+FSRa/k3xxFf.yPd", value = "")
+  @JsonProperty(JSON_PROPERTY_SECRET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSecret() {
     return secret;
@@ -96,6 +101,8 @@ public class InlineResponse201 {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Read-only timestamp, automatically assigned on back-end.")
+  @JsonProperty(JSON_PROPERTY_CREATE_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public OffsetDateTime getCreateTime() {
     return createTime;

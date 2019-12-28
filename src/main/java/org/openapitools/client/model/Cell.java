@@ -15,62 +15,63 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import org.openapitools.client.model.Address;
 import org.openapitools.client.model.Contact;
 import org.threeten.bp.OffsetDateTime;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * A cell is the top-level entity in Cell Block. Each tenant is represented by a cell.
  */
 @ApiModel(description = "A cell is the top-level entity in Cell Block. Each tenant is represented by a cell.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T19:47:01.875545-05:00[America/Toronto]")
+@JsonPropertyOrder({
+  Cell.JSON_PROPERTY_ID,
+  Cell.JSON_PROPERTY_OBJECT,
+  Cell.JSON_PROPERTY_NAME,
+  Cell.JSON_PROPERTY_METADATA,
+  Cell.JSON_PROPERTY_CONTACT,
+  Cell.JSON_PROPERTY_ADDRESS,
+  Cell.JSON_PROPERTY_CREATE_TIME,
+  Cell.JSON_PROPERTY_CREATE_USER,
+  Cell.JSON_PROPERTY_UPDATE_TIME,
+  Cell.JSON_PROPERTY_UPDATE_USER
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T20:04:54.751567-05:00[America/Toronto]")
 public class Cell {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
+  public static final String JSON_PROPERTY_ID = "id";
   private String id;
 
-  public static final String SERIALIZED_NAME_OBJECT = "object";
-  @SerializedName(SERIALIZED_NAME_OBJECT)
+  public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+  public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
+  public static final String JSON_PROPERTY_METADATA = "metadata";
   private Object metadata;
 
-  public static final String SERIALIZED_NAME_CONTACT = "contact";
-  @SerializedName(SERIALIZED_NAME_CONTACT)
+  public static final String JSON_PROPERTY_CONTACT = "contact";
   private Contact contact;
 
-  public static final String SERIALIZED_NAME_ADDRESS = "address";
-  @SerializedName(SERIALIZED_NAME_ADDRESS)
+  public static final String JSON_PROPERTY_ADDRESS = "address";
   private Address address;
 
-  public static final String SERIALIZED_NAME_CREATE_TIME = "createTime";
-  @SerializedName(SERIALIZED_NAME_CREATE_TIME)
+  public static final String JSON_PROPERTY_CREATE_TIME = "createTime";
   private OffsetDateTime createTime;
 
-  public static final String SERIALIZED_NAME_CREATE_USER = "createUser";
-  @SerializedName(SERIALIZED_NAME_CREATE_USER)
+  public static final String JSON_PROPERTY_CREATE_USER = "createUser";
   private String createUser;
 
-  public static final String SERIALIZED_NAME_UPDATE_TIME = "updateTime";
-  @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
+  public static final String JSON_PROPERTY_UPDATE_TIME = "updateTime";
   private OffsetDateTime updateTime;
 
-  public static final String SERIALIZED_NAME_UPDATE_USER = "updateUser";
-  @SerializedName(SERIALIZED_NAME_UPDATE_USER)
+  public static final String JSON_PROPERTY_UPDATE_USER = "updateUser";
   private String updateUser;
 
 
@@ -85,6 +86,8 @@ public class Cell {
    * @return id
   **/
   @ApiModelProperty(required = true, value = "The resource ID.")
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
     return id;
@@ -108,6 +111,8 @@ public class Cell {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "cell", value = "String that identifies the type of entity represented.")
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObject() {
     return _object;
@@ -130,6 +135,8 @@ public class Cell {
    * @return name
   **/
   @ApiModelProperty(example = "Black Iron Software", required = true, value = "")
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
     return name;
@@ -153,6 +160,8 @@ public class Cell {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Holds any valid JSON object up to 2KB in length. Field can be used to store application specific values or configuration.")
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Object getMetadata() {
     return metadata;
@@ -176,6 +185,8 @@ public class Cell {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CONTACT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Contact getContact() {
     return contact;
@@ -199,6 +210,8 @@ public class Cell {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Address getAddress() {
     return address;
@@ -216,6 +229,8 @@ public class Cell {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Read-only timestamp, automatically assigned on back-end.")
+  @JsonProperty(JSON_PROPERTY_CREATE_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public OffsetDateTime getCreateTime() {
     return createTime;
@@ -230,6 +245,8 @@ public class Cell {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "The UUID of the user who preformed the action.")
+  @JsonProperty(JSON_PROPERTY_CREATE_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreateUser() {
     return createUser;
@@ -244,6 +261,8 @@ public class Cell {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Read-only timestamp, automatically assigned on back-end.")
+  @JsonProperty(JSON_PROPERTY_UPDATE_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public OffsetDateTime getUpdateTime() {
     return updateTime;
@@ -258,6 +277,8 @@ public class Cell {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "The UUID of the user who preformed the action.")
+  @JsonProperty(JSON_PROPERTY_UPDATE_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUpdateUser() {
     return updateUser;

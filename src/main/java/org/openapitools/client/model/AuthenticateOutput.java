@@ -15,58 +15,59 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * AuthenticateOutput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T19:47:01.875545-05:00[America/Toronto]")
+@JsonPropertyOrder({
+  AuthenticateOutput.JSON_PROPERTY_ACCESS_TOKEN,
+  AuthenticateOutput.JSON_PROPERTY_EXPIRES_IN,
+  AuthenticateOutput.JSON_PROPERTY_ID_TOKEN,
+  AuthenticateOutput.JSON_PROPERTY_REFRESH_TOKEN,
+  AuthenticateOutput.JSON_PROPERTY_TOKEN_TYPE,
+  AuthenticateOutput.JSON_PROPERTY_CHALLENGE_NAME,
+  AuthenticateOutput.JSON_PROPERTY_CODE_DELIVERY_MEDIUM,
+  AuthenticateOutput.JSON_PROPERTY_CODE_DELIVERY_DESTINATION,
+  AuthenticateOutput.JSON_PROPERTY_USER_ID,
+  AuthenticateOutput.JSON_PROPERTY_SESSION
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T20:04:54.751567-05:00[America/Toronto]")
 public class AuthenticateOutput {
-  public static final String SERIALIZED_NAME_ACCESS_TOKEN = "accessToken";
-  @SerializedName(SERIALIZED_NAME_ACCESS_TOKEN)
+  public static final String JSON_PROPERTY_ACCESS_TOKEN = "accessToken";
   private String accessToken;
 
-  public static final String SERIALIZED_NAME_EXPIRES_IN = "expiresIn";
-  @SerializedName(SERIALIZED_NAME_EXPIRES_IN)
+  public static final String JSON_PROPERTY_EXPIRES_IN = "expiresIn";
   private String expiresIn;
 
-  public static final String SERIALIZED_NAME_ID_TOKEN = "idToken";
-  @SerializedName(SERIALIZED_NAME_ID_TOKEN)
+  public static final String JSON_PROPERTY_ID_TOKEN = "idToken";
   private String idToken;
 
-  public static final String SERIALIZED_NAME_REFRESH_TOKEN = "refreshToken";
-  @SerializedName(SERIALIZED_NAME_REFRESH_TOKEN)
+  public static final String JSON_PROPERTY_REFRESH_TOKEN = "refreshToken";
   private String refreshToken;
 
-  public static final String SERIALIZED_NAME_TOKEN_TYPE = "tokenType";
-  @SerializedName(SERIALIZED_NAME_TOKEN_TYPE)
+  public static final String JSON_PROPERTY_TOKEN_TYPE = "tokenType";
   private String tokenType;
 
-  public static final String SERIALIZED_NAME_CHALLENGE_NAME = "challengeName";
-  @SerializedName(SERIALIZED_NAME_CHALLENGE_NAME)
+  public static final String JSON_PROPERTY_CHALLENGE_NAME = "challengeName";
   private String challengeName;
 
-  public static final String SERIALIZED_NAME_CODE_DELIVERY_MEDIUM = "codeDeliveryMedium";
-  @SerializedName(SERIALIZED_NAME_CODE_DELIVERY_MEDIUM)
+  public static final String JSON_PROPERTY_CODE_DELIVERY_MEDIUM = "codeDeliveryMedium";
   private String codeDeliveryMedium;
 
-  public static final String SERIALIZED_NAME_CODE_DELIVERY_DESTINATION = "codeDeliveryDestination";
-  @SerializedName(SERIALIZED_NAME_CODE_DELIVERY_DESTINATION)
+  public static final String JSON_PROPERTY_CODE_DELIVERY_DESTINATION = "codeDeliveryDestination";
   private String codeDeliveryDestination;
 
-  public static final String SERIALIZED_NAME_USER_ID = "userId";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "userId";
   private String userId;
 
-  public static final String SERIALIZED_NAME_SESSION = "session";
-  @SerializedName(SERIALIZED_NAME_SESSION)
+  public static final String JSON_PROPERTY_SESSION = "session";
   private String session;
 
 
@@ -82,6 +83,8 @@ public class AuthenticateOutput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ACCESS_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAccessToken() {
     return accessToken;
@@ -105,6 +108,8 @@ public class AuthenticateOutput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_EXPIRES_IN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getExpiresIn() {
     return expiresIn;
@@ -128,6 +133,8 @@ public class AuthenticateOutput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ID_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIdToken() {
     return idToken;
@@ -151,6 +158,8 @@ public class AuthenticateOutput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REFRESH_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRefreshToken() {
     return refreshToken;
@@ -174,6 +183,8 @@ public class AuthenticateOutput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TOKEN_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTokenType() {
     return tokenType;
@@ -197,6 +208,8 @@ public class AuthenticateOutput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHALLENGE_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChallengeName() {
     return challengeName;
@@ -220,6 +233,8 @@ public class AuthenticateOutput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CODE_DELIVERY_MEDIUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCodeDeliveryMedium() {
     return codeDeliveryMedium;
@@ -243,6 +258,8 @@ public class AuthenticateOutput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CODE_DELIVERY_DESTINATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCodeDeliveryDestination() {
     return codeDeliveryDestination;
@@ -266,6 +283,8 @@ public class AuthenticateOutput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUserId() {
     return userId;
@@ -289,6 +308,8 @@ public class AuthenticateOutput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSession() {
     return session;

@@ -15,26 +15,27 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * AuthenticateInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T19:47:01.875545-05:00[America/Toronto]")
+@JsonPropertyOrder({
+  AuthenticateInput.JSON_PROPERTY_USERNAME,
+  AuthenticateInput.JSON_PROPERTY_PASSWORD
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T20:04:54.751567-05:00[America/Toronto]")
 public class AuthenticateInput {
-  public static final String SERIALIZED_NAME_USERNAME = "username";
-  @SerializedName(SERIALIZED_NAME_USERNAME)
+  public static final String JSON_PROPERTY_USERNAME = "username";
   private String username;
 
-  public static final String SERIALIZED_NAME_PASSWORD = "password";
-  @SerializedName(SERIALIZED_NAME_PASSWORD)
+  public static final String JSON_PROPERTY_PASSWORD = "password";
   private String password;
 
 
@@ -49,6 +50,8 @@ public class AuthenticateInput {
    * @return username
   **/
   @ApiModelProperty(required = true, value = "")
+  @JsonProperty(JSON_PROPERTY_USERNAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUsername() {
     return username;
@@ -71,6 +74,8 @@ public class AuthenticateInput {
    * @return password
   **/
   @ApiModelProperty(required = true, value = "")
+  @JsonProperty(JSON_PROPERTY_PASSWORD)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPassword() {
     return password;

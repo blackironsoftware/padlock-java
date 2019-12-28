@@ -15,36 +15,37 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import org.openapitools.client.model.Address;
 import org.openapitools.client.model.Contact;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * CreateCellInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T19:47:01.875545-05:00[America/Toronto]")
+@JsonPropertyOrder({
+  CreateCellInput.JSON_PROPERTY_NAME,
+  CreateCellInput.JSON_PROPERTY_METADATA,
+  CreateCellInput.JSON_PROPERTY_CONTACT,
+  CreateCellInput.JSON_PROPERTY_ADDRESS
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T20:04:54.751567-05:00[America/Toronto]")
 public class CreateCellInput {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+  public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
+  public static final String JSON_PROPERTY_METADATA = "metadata";
   private Object metadata;
 
-  public static final String SERIALIZED_NAME_CONTACT = "contact";
-  @SerializedName(SERIALIZED_NAME_CONTACT)
+  public static final String JSON_PROPERTY_CONTACT = "contact";
   private Contact contact;
 
-  public static final String SERIALIZED_NAME_ADDRESS = "address";
-  @SerializedName(SERIALIZED_NAME_ADDRESS)
+  public static final String JSON_PROPERTY_ADDRESS = "address";
   private Address address;
 
 
@@ -59,6 +60,8 @@ public class CreateCellInput {
    * @return name
   **/
   @ApiModelProperty(example = "Black Iron Software", required = true, value = "")
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
     return name;
@@ -82,6 +85,8 @@ public class CreateCellInput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Holds any valid JSON object up to 2KB in length. Field can be used to store application specific values or configuration.")
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Object getMetadata() {
     return metadata;
@@ -105,6 +110,8 @@ public class CreateCellInput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CONTACT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Contact getContact() {
     return contact;
@@ -128,6 +135,8 @@ public class CreateCellInput {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Address getAddress() {
     return address;
