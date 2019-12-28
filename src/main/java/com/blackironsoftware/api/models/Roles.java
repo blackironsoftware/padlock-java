@@ -15,75 +15,88 @@ package com.blackironsoftware.api.models;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.blackironsoftware.api.models.Role;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * AuthenticateInput
+ * Roles
  */
 @JsonPropertyOrder({
-  AuthenticateInput.JSON_PROPERTY_USERNAME,
-  AuthenticateInput.JSON_PROPERTY_PASSWORD
+  Roles.JSON_PROPERTY_NEXT_PAGE_TOKEN,
+  Roles.JSON_PROPERTY_ITEMS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T21:38:18.544109-05:00[America/Toronto]")
-public class AuthenticateInput {
-  public static final String JSON_PROPERTY_USERNAME = "username";
-  private String username;
+public class Roles {
+  public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
+  private String nextPageToken;
 
-  public static final String JSON_PROPERTY_PASSWORD = "password";
-  private String password;
+  public static final String JSON_PROPERTY_ITEMS = "items";
+  private List<Role> items = null;
 
 
-  public AuthenticateInput username(String username) {
+  public Roles nextPageToken(String nextPageToken) {
     
-    this.username = username;
+    this.nextPageToken = nextPageToken;
     return this;
   }
 
    /**
-   * Get username
-   * @return username
+   * Get nextPageToken
+   * @return nextPageToken
   **/
-  @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_USERNAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getUsername() {
-    return username;
+  public String getNextPageToken() {
+    return nextPageToken;
   }
 
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setNextPageToken(String nextPageToken) {
+    this.nextPageToken = nextPageToken;
   }
 
 
-  public AuthenticateInput password(String password) {
+  public Roles items(List<Role> items) {
     
-    this.password = password;
+    this.items = items;
+    return this;
+  }
+
+  public Roles addItemsItem(Role itemsItem) {
+    if (this.items == null) {
+      this.items = new ArrayList<Role>();
+    }
+    this.items.add(itemsItem);
     return this;
   }
 
    /**
-   * Get password
-   * @return password
+   * Get items
+   * @return items
   **/
-  @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_PASSWORD)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ITEMS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getPassword() {
-    return password;
+  public List<Role> getItems() {
+    return items;
   }
 
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setItems(List<Role> items) {
+    this.items = items;
   }
 
 
@@ -95,23 +108,23 @@ public class AuthenticateInput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AuthenticateInput authenticateInput = (AuthenticateInput) o;
-    return Objects.equals(this.username, authenticateInput.username) &&
-        Objects.equals(this.password, authenticateInput.password);
+    Roles roles = (Roles) o;
+    return Objects.equals(this.nextPageToken, roles.nextPageToken) &&
+        Objects.equals(this.items, roles.items);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(username, password);
+    return Objects.hash(nextPageToken, items);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AuthenticateInput {\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("class Roles {\n");
+    sb.append("    nextPageToken: ").append(toIndentedString(nextPageToken)).append("\n");
+    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("}");
     return sb.toString();
   }

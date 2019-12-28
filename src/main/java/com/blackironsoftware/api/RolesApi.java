@@ -7,10 +7,10 @@ import com.blackironsoftware.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import com.blackironsoftware.api.models.Cell;
-import com.blackironsoftware.api.models.Cells;
-import com.blackironsoftware.api.models.CreateCellInput;
+import com.blackironsoftware.api.models.CreateRoleInput;
 import com.blackironsoftware.api.models.Error;
+import com.blackironsoftware.api.models.Role;
+import com.blackironsoftware.api.models.Roles;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,14 +18,14 @@ import java.util.List;
 import java.util.Map;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T21:38:18.544109-05:00[America/Toronto]")
-public class CellsApi {
+public class RolesApi {
   private ApiClient apiClient;
 
-  public CellsApi() {
+  public RolesApi() {
     this(Configuration.getDefaultApiClient());
   }
 
-  public CellsApi(ApiClient apiClient) {
+  public RolesApi(ApiClient apiClient) {
     this.apiClient = apiClient;
   }
 
@@ -38,17 +38,29 @@ public class CellsApi {
   }
 
   /**
-   * Create a cell
+   * Create a role
    * 
-   * @param createCellInput  (optional)
-   * @return a {@code Cell}
+   * @param cellId Cell ID (required)
+   * @param createRoleInput Role resource (required)
+   * @return a {@code Role}
    * @throws ApiException if fails to make API call
    */
-  public Cell createCell(CreateCellInput createCellInput) throws ApiException {
-    Object localVarPostBody = createCellInput;
+  public Role createRole(String cellId, CreateRoleInput createRoleInput) throws ApiException {
+    Object localVarPostBody = createRoleInput;
+    
+    // verify the required parameter 'cellId' is set
+    if (cellId == null) {
+      throw new ApiException(400, "Missing the required parameter 'cellId' when calling createRole");
+    }
+    
+    // verify the required parameter 'createRoleInput' is set
+    if (createRoleInput == null) {
+      throw new ApiException(400, "Missing the required parameter 'createRoleInput' when calling createRole");
+    }
     
     // create path and map variables
-    String localVarPath = "/cells".replaceAll("\\{format\\}","json");
+    String localVarPath = "/cells/{cellId}/roles".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -70,28 +82,35 @@ public class CellsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
+    String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Cell> localVarReturnType = new GenericType<Cell>() {};
+    GenericType<Role> localVarReturnType = new GenericType<Role>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
   /**
-   * Deletes a cell
+   * Deletes a role and dissociates all users from the role.
    * 
    * @param cellId Cell ID (required)
+   * @param roleId Role ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteCell(String cellId) throws ApiException {
+  public void deleteRole(String cellId, String roleId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'cellId' is set
     if (cellId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cellId' when calling deleteCell");
+      throw new ApiException(400, "Missing the required parameter 'cellId' when calling deleteRole");
+    }
+    
+    // verify the required parameter 'roleId' is set
+    if (roleId == null) {
+      throw new ApiException(400, "Missing the required parameter 'roleId' when calling deleteRole");
     }
     
     // create path and map variables
-    String localVarPath = "/cells/{cellId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()));
+    String localVarPath = "/cells/{cellId}/roles/{roleId}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()))
+      .replaceAll("\\{" + "roleId" + "\\}", apiClient.escapeString(roleId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -113,28 +132,79 @@ public class CellsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
+    String[] localVarAuthNames = new String[] {  };
 
 
     apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
   }
   /**
-   * Retrieve a cell
+   * Retrieve a role
    * 
    * @param cellId Cell ID (required)
-   * @return a {@code Cell}
+   * @param roleId Role ID (required)
+   * @return a {@code Role}
    * @throws ApiException if fails to make API call
    */
-  public Cell getCell(String cellId) throws ApiException {
+  public Role getRole(String cellId, String roleId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'cellId' is set
     if (cellId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cellId' when calling getCell");
+      throw new ApiException(400, "Missing the required parameter 'cellId' when calling getRole");
+    }
+    
+    // verify the required parameter 'roleId' is set
+    if (roleId == null) {
+      throw new ApiException(400, "Missing the required parameter 'roleId' when calling getRole");
     }
     
     // create path and map variables
-    String localVarPath = "/cells/{cellId}".replaceAll("\\{format\\}","json")
+    String localVarPath = "/cells/{cellId}/roles/{roleId}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()))
+      .replaceAll("\\{" + "roleId" + "\\}", apiClient.escapeString(roleId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<Role> localVarReturnType = new GenericType<Role>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * Retrieves a list of roles
+   * 
+   * @param cellId Cell ID (required)
+   * @return a {@code Roles}
+   * @throws ApiException if fails to make API call
+   */
+  public Roles listRoles(String cellId) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'cellId' is set
+    if (cellId == null) {
+      throw new ApiException(400, "Missing the required parameter 'cellId' when calling listRoles");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/cells/{cellId}/roles".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()));
 
     // query params
@@ -157,95 +227,9 @@ public class CellsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
+    String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Cell> localVarReturnType = new GenericType<Cell>() {};
+    GenericType<Roles> localVarReturnType = new GenericType<Roles>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-      }
-  /**
-   * Retrieves a list of cells
-   * 
-   * @param pageSize The number of items to return (optional)
-   * @param pageToken The page token that controls what page of items to return (optional)
-   * @return a {@code Cells}
-   * @throws ApiException if fails to make API call
-   */
-  public Cells listCells(Integer pageSize, String pageToken) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/cells".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_token", pageToken));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
-    GenericType<Cells> localVarReturnType = new GenericType<Cells>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-      }
-  /**
-   * Update a cell
-   * 
-   * @param cellId Cell ID (required)
-   * @param cell  (optional)
-   * @return a {@code Cell}
-   * @throws ApiException if fails to make API call
-   */
-  public Cell updateCell(String cellId, Cell cell) throws ApiException {
-    Object localVarPostBody = cell;
-    
-    // verify the required parameter 'cellId' is set
-    if (cellId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cellId' when calling updateCell");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/cells/{cellId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
-    GenericType<Cell> localVarReturnType = new GenericType<Cell>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
 }

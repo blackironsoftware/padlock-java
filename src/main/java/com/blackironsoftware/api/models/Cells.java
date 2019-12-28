@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Cells.JSON_PROPERTY_NEXT_PAGE_TOKEN,
   Cells.JSON_PROPERTY_ITEMS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T21:09:50.815286-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T21:38:18.544109-05:00[America/Toronto]")
 public class Cells {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
   private String nextPageToken;

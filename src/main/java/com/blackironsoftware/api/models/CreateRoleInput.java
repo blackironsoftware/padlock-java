@@ -21,94 +21,101 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.threeten.bp.OffsetDateTime;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * Access key and secret.
+ * CreateRoleInput
  */
-@ApiModel(description = "Access key and secret.")
 @JsonPropertyOrder({
-  InlineResponse201.JSON_PROPERTY_KEY,
-  InlineResponse201.JSON_PROPERTY_SECRET,
-  InlineResponse201.JSON_PROPERTY_CREATE_TIME
+  CreateRoleInput.JSON_PROPERTY_NAME,
+  CreateRoleInput.JSON_PROPERTY_DESCRIPTION,
+  CreateRoleInput.JSON_PROPERTY_PERMISSIONS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-27T21:38:18.544109-05:00[America/Toronto]")
-public class InlineResponse201 {
-  public static final String JSON_PROPERTY_KEY = "key";
-  private String key;
+public class CreateRoleInput {
+  public static final String JSON_PROPERTY_NAME = "name";
+  private String name;
 
-  public static final String JSON_PROPERTY_SECRET = "secret";
-  private String secret;
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  private String description;
 
-  public static final String JSON_PROPERTY_CREATE_TIME = "createTime";
-  private OffsetDateTime createTime;
+  public static final String JSON_PROPERTY_PERMISSIONS = "permissions";
+  private String permissions;
 
 
-  public InlineResponse201 key(String key) {
+  public CreateRoleInput name(String name) {
     
-    this.key = key;
+    this.name = name;
     return this;
   }
 
    /**
-   * Get key
-   * @return key
+   * Get name
+   * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "D0ALLECXOXUAIJPR0CX8", value = "")
-  @JsonProperty(JSON_PROPERTY_KEY)
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getKey() {
-    return key;
+  public String getName() {
+    return name;
   }
 
 
-  public void setKey(String key) {
-    this.key = key;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
-  public InlineResponse201 secret(String secret) {
+  public CreateRoleInput description(String description) {
     
-    this.secret = secret;
+    this.description = description;
     return this;
   }
 
    /**
-   * Get secret
-   * @return secret
+   * Get description
+   * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "3.jukizcG+4bybEapCQy/r0a+FSRa/k3xxFf.yPd", value = "")
-  @JsonProperty(JSON_PROPERTY_SECRET)
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getSecret() {
-    return secret;
+  public String getDescription() {
+    return description;
   }
 
 
-  public void setSecret(String secret) {
-    this.secret = secret;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
+
+  public CreateRoleInput permissions(String permissions) {
+    
+    this.permissions = permissions;
+    return this;
+  }
 
    /**
-   * Read-only timestamp, automatically assigned on back-end.
-   * @return createTime
+   * Get permissions
+   * @return permissions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Read-only timestamp, automatically assigned on back-end.")
-  @JsonProperty(JSON_PROPERTY_CREATE_TIME)
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PERMISSIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OffsetDateTime getCreateTime() {
-    return createTime;
+  public String getPermissions() {
+    return permissions;
   }
 
 
+  public void setPermissions(String permissions) {
+    this.permissions = permissions;
+  }
 
 
   @Override
@@ -119,25 +126,25 @@ public class InlineResponse201 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse201 inlineResponse201 = (InlineResponse201) o;
-    return Objects.equals(this.key, inlineResponse201.key) &&
-        Objects.equals(this.secret, inlineResponse201.secret) &&
-        Objects.equals(this.createTime, inlineResponse201.createTime);
+    CreateRoleInput createRoleInput = (CreateRoleInput) o;
+    return Objects.equals(this.name, createRoleInput.name) &&
+        Objects.equals(this.description, createRoleInput.description) &&
+        Objects.equals(this.permissions, createRoleInput.permissions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, secret, createTime);
+    return Objects.hash(name, description, permissions);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse201 {\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
-    sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+    sb.append("class CreateRoleInput {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
