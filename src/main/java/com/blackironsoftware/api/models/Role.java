@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Role.JSON_PROPERTY_UPDATE_TIME,
   Role.JSON_PROPERTY_UPDATE_USER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-31T19:47:25.902986-05:00[America/New_York]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-31T19:59:41.117806-05:00[America/New_York]")
 public class Role {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

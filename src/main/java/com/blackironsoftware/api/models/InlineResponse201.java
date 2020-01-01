@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   InlineResponse201.JSON_PROPERTY_SECRET,
   InlineResponse201.JSON_PROPERTY_CREATE_TIME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-31T19:47:25.902986-05:00[America/New_York]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-31T19:59:41.117806-05:00[America/New_York]")
 public class InlineResponse201 {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;

@@ -32,9 +32,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @ApiModel(description = "Clients represent an entity that a cell provides services to. This could be an individual or company.")
 @JsonPropertyOrder({
   Client.JSON_PROPERTY_ID,
+  Client.JSON_PROPERTY_OBJECT,
+  Client.JSON_PROPERTY_CELL_ID,
   Client.JSON_PROPERTY_NAME,
   Client.JSON_PROPERTY_DOING_BUSINESS_AS,
   Client.JSON_PROPERTY_LEGAL_NAME,
+  Client.JSON_PROPERTY_METADATA,
   Client.JSON_PROPERTY_CONTACT,
   Client.JSON_PROPERTY_ADDRESS,
   Client.JSON_PROPERTY_CREATE_TIME,
@@ -42,10 +45,16 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Client.JSON_PROPERTY_UPDATE_TIME,
   Client.JSON_PROPERTY_UPDATE_USER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-31T19:47:25.902986-05:00[America/New_York]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-31T19:59:41.117806-05:00[America/New_York]")
 public class Client {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
+
+  public static final String JSON_PROPERTY_OBJECT = "object";
+  private String _object;
+
+  public static final String JSON_PROPERTY_CELL_ID = "cellId";
+  private String cellId;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -55,6 +64,9 @@ public class Client {
 
   public static final String JSON_PROPERTY_LEGAL_NAME = "legalName";
   private String legalName;
+
+  public static final String JSON_PROPERTY_METADATA = "metadata";
+  private Object metadata;
 
   public static final String JSON_PROPERTY_CONTACT = "contact";
   private Contact contact;
@@ -97,6 +109,56 @@ public class Client {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  public Client _object(String _object) {
+    
+    this._object = _object;
+    return this;
+  }
+
+   /**
+   * String that identifies the type of entity represented.
+   * @return _object
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "client", value = "String that identifies the type of entity represented.")
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getObject() {
+    return _object;
+  }
+
+
+  public void setObject(String _object) {
+    this._object = _object;
+  }
+
+
+  public Client cellId(String cellId) {
+    
+    this.cellId = cellId;
+    return this;
+  }
+
+   /**
+   * The id of the cell the client belongs too.
+   * @return cellId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "cell_bnpcida1bcvs72s7bl30", value = "The id of the cell the client belongs too.")
+  @JsonProperty(JSON_PROPERTY_CELL_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCellId() {
+    return cellId;
+  }
+
+
+  public void setCellId(String cellId) {
+    this.cellId = cellId;
   }
 
 
@@ -172,6 +234,31 @@ public class Client {
 
   public void setLegalName(String legalName) {
     this.legalName = legalName;
+  }
+
+
+  public Client metadata(Object metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Holds any valid JSON object up to 2KB in length. Field can be used to store application specific values or configuration.
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Holds any valid JSON object up to 2KB in length. Field can be used to store application specific values or configuration.")
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Object getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
   }
 
 
@@ -317,9 +404,12 @@ public class Client {
     }
     Client client = (Client) o;
     return Objects.equals(this.id, client.id) &&
+        Objects.equals(this._object, client._object) &&
+        Objects.equals(this.cellId, client.cellId) &&
         Objects.equals(this.name, client.name) &&
         Objects.equals(this.doingBusinessAs, client.doingBusinessAs) &&
         Objects.equals(this.legalName, client.legalName) &&
+        Objects.equals(this.metadata, client.metadata) &&
         Objects.equals(this.contact, client.contact) &&
         Objects.equals(this.address, client.address) &&
         Objects.equals(this.createTime, client.createTime) &&
@@ -330,7 +420,7 @@ public class Client {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, doingBusinessAs, legalName, contact, address, createTime, createUser, updateTime, updateUser);
+    return Objects.hash(id, _object, cellId, name, doingBusinessAs, legalName, metadata, contact, address, createTime, createUser, updateTime, updateUser);
   }
 
 
@@ -339,9 +429,12 @@ public class Client {
     StringBuilder sb = new StringBuilder();
     sb.append("class Client {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+    sb.append("    cellId: ").append(toIndentedString(cellId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    doingBusinessAs: ").append(toIndentedString(doingBusinessAs)).append("\n");
     sb.append("    legalName: ").append(toIndentedString(legalName)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
