@@ -31,6 +31,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @ApiModel(description = "Roles represent an entity that define permissions that can be granted to a user.")
 @JsonPropertyOrder({
   Role.JSON_PROPERTY_ID,
+  Role.JSON_PROPERTY_OBJECT,
+  Role.JSON_PROPERTY_CELL_ID,
   Role.JSON_PROPERTY_NAME,
   Role.JSON_PROPERTY_DESCRIPTION,
   Role.JSON_PROPERTY_PERMISSIONS,
@@ -39,10 +41,16 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Role.JSON_PROPERTY_UPDATE_TIME,
   Role.JSON_PROPERTY_UPDATE_USER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-31T19:59:41.117806-05:00[America/New_York]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-31T20:34:17.327395-05:00[America/New_York]")
 public class Role {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
+
+  public static final String JSON_PROPERTY_OBJECT = "object";
+  private String _object;
+
+  public static final String JSON_PROPERTY_CELL_ID = "cellId";
+  private String cellId;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -88,6 +96,56 @@ public class Role {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  public Role _object(String _object) {
+    
+    this._object = _object;
+    return this;
+  }
+
+   /**
+   * String that identifies the type of entity represented.
+   * @return _object
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "client", value = "String that identifies the type of entity represented.")
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getObject() {
+    return _object;
+  }
+
+
+  public void setObject(String _object) {
+    this._object = _object;
+  }
+
+
+  public Role cellId(String cellId) {
+    
+    this.cellId = cellId;
+    return this;
+  }
+
+   /**
+   * The id of the cell the client belongs too.
+   * @return cellId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "cell_bnpcida1bcvs72s7bl30", value = "The id of the cell the client belongs too.")
+  @JsonProperty(JSON_PROPERTY_CELL_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCellId() {
+    return cellId;
+  }
+
+
+  public void setCellId(String cellId) {
+    this.cellId = cellId;
   }
 
 
@@ -258,6 +316,8 @@ public class Role {
     }
     Role role = (Role) o;
     return Objects.equals(this.id, role.id) &&
+        Objects.equals(this._object, role._object) &&
+        Objects.equals(this.cellId, role.cellId) &&
         Objects.equals(this.name, role.name) &&
         Objects.equals(this.description, role.description) &&
         Objects.equals(this.permissions, role.permissions) &&
@@ -269,7 +329,7 @@ public class Role {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, permissions, createTime, createUser, updateTime, updateUser);
+    return Objects.hash(id, _object, cellId, name, description, permissions, createTime, createUser, updateTime, updateUser);
   }
 
 
@@ -278,6 +338,8 @@ public class Role {
     StringBuilder sb = new StringBuilder();
     sb.append("class Role {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+    sb.append("    cellId: ").append(toIndentedString(cellId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");

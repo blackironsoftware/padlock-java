@@ -49,6 +49,22 @@ public class RoleTest {
     }
 
     /**
+     * Test the property '_object'
+     */
+    @Test
+    public void _objectTest() {
+        // TODO: test _object
+    }
+
+    /**
+     * Test the property 'cellId'
+     */
+    @Test
+    public void cellIdTest() {
+        // TODO: test cellId
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test

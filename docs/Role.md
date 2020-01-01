@@ -8,6 +8,8 @@ Roles represent an entity that define permissions that can be granted to a user.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | The resource ID. Defaults to UUID v4 |  [optional]
+**_object** | **String** | String that identifies the type of entity represented. |  [optional]
+**cellId** | **String** | The id of the cell the client belongs too. |  [optional]
 **name** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
 **permissions** | **String** |  |  [optional]
