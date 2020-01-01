@@ -65,6 +65,14 @@ public class CreateClientInputTest {
     }
 
     /**
+     * Test the property 'metadata'
+     */
+    @Test
+    public void metadataTest() {
+        // TODO: test metadata
+    }
+
+    /**
      * Test the property 'contact'
      */
     @Test

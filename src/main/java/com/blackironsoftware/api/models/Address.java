@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Address.JSON_PROPERTY_POSTAL_CODE,
   Address.JSON_PROPERTY_COUNTRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-28T17:34:42.919964-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-31T19:47:25.902986-05:00[America/New_York]")
 public class Address {
   public static final String JSON_PROPERTY_LINE1 = "line1";
   private String line1;

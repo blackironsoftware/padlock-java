@@ -33,10 +33,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   CreateClientInput.JSON_PROPERTY_NAME,
   CreateClientInput.JSON_PROPERTY_DOING_BUSINESS_AS,
   CreateClientInput.JSON_PROPERTY_LEGAL_NAME,
+  CreateClientInput.JSON_PROPERTY_METADATA,
   CreateClientInput.JSON_PROPERTY_CONTACT,
   CreateClientInput.JSON_PROPERTY_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-28T17:34:42.919964-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-12-31T19:47:25.902986-05:00[America/New_York]")
 public class CreateClientInput {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -46,6 +47,9 @@ public class CreateClientInput {
 
   public static final String JSON_PROPERTY_LEGAL_NAME = "legalName";
   private String legalName;
+
+  public static final String JSON_PROPERTY_METADATA = "metadata";
+  private Object metadata;
 
   public static final String JSON_PROPERTY_CONTACT = "contact";
   private Contact contact;
@@ -129,6 +133,31 @@ public class CreateClientInput {
   }
 
 
+  public CreateClientInput metadata(Object metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Holds any valid JSON object up to 2KB in length. Field can be used to store application specific values or configuration.
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Holds any valid JSON object up to 2KB in length. Field can be used to store application specific values or configuration.")
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Object getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
+
   public CreateClientInput contact(Contact contact) {
     
     this.contact = contact;
@@ -191,13 +220,14 @@ public class CreateClientInput {
     return Objects.equals(this.name, createClientInput.name) &&
         Objects.equals(this.doingBusinessAs, createClientInput.doingBusinessAs) &&
         Objects.equals(this.legalName, createClientInput.legalName) &&
+        Objects.equals(this.metadata, createClientInput.metadata) &&
         Objects.equals(this.contact, createClientInput.contact) &&
         Objects.equals(this.address, createClientInput.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, doingBusinessAs, legalName, contact, address);
+    return Objects.hash(name, doingBusinessAs, legalName, metadata, contact, address);
   }
 
 
@@ -208,6 +238,7 @@ public class CreateClientInput {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    doingBusinessAs: ").append(toIndentedString(doingBusinessAs)).append("\n");
     sb.append("    legalName: ").append(toIndentedString(legalName)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
