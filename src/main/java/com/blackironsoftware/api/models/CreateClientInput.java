@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   CreateClientInput.JSON_PROPERTY_CONTACT,
   CreateClientInput.JSON_PROPERTY_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-06T18:26:00.849569-05:00[America/New_York]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-06T18:39:58.739242-05:00[America/New_York]")
 public class CreateClientInput {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;

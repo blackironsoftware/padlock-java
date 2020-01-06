@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Audit.JSON_PROPERTY_UPDATE_TIME,
   Audit.JSON_PROPERTY_UPDATE_USER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-06T18:26:00.849569-05:00[America/New_York]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-06T18:39:58.739242-05:00[America/New_York]")
 public class Audit {
   public static final String JSON_PROPERTY_CREATE_TIME = "createTime";
   private OffsetDateTime createTime;

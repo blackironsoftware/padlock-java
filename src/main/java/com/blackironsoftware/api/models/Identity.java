@@ -31,6 +31,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
   Identity.JSON_PROPERTY_ID,
   Identity.JSON_PROPERTY_OBJECT,
+  Identity.JSON_PROPERTY_CELL_ID,
   Identity.JSON_PROPERTY_GIVEN_NAME,
   Identity.JSON_PROPERTY_SURNAME,
   Identity.JSON_PROPERTY_EMAIL,
@@ -39,13 +40,16 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Identity.JSON_PROPERTY_AUDIT,
   Identity.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-06T18:26:00.849569-05:00[America/New_York]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-06T18:39:58.739242-05:00[America/New_York]")
 public class Identity {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
+
+  public static final String JSON_PROPERTY_CELL_ID = "cellId";
+  private String cellId;
 
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private String givenName;
@@ -116,6 +120,31 @@ public class Identity {
 
   public void setObject(String _object) {
     this._object = _object;
+  }
+
+
+  public Identity cellId(String cellId) {
+    
+    this.cellId = cellId;
+    return this;
+  }
+
+   /**
+   * Get cellId
+   * @return cellId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CELL_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCellId() {
+    return cellId;
+  }
+
+
+  public void setCellId(String cellId) {
+    this.cellId = cellId;
   }
 
 
@@ -305,6 +334,7 @@ public class Identity {
     Identity identity = (Identity) o;
     return Objects.equals(this.id, identity.id) &&
         Objects.equals(this._object, identity._object) &&
+        Objects.equals(this.cellId, identity.cellId) &&
         Objects.equals(this.givenName, identity.givenName) &&
         Objects.equals(this.surname, identity.surname) &&
         Objects.equals(this.email, identity.email) &&
@@ -316,7 +346,7 @@ public class Identity {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, givenName, surname, email, phone, enabled, audit, status);
+    return Objects.hash(id, _object, cellId, givenName, surname, email, phone, enabled, audit, status);
   }
 
 
@@ -326,6 +356,7 @@ public class Identity {
     sb.append("class Identity {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+    sb.append("    cellId: ").append(toIndentedString(cellId)).append("\n");
     sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
     sb.append("    surname: ").append(toIndentedString(surname)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  |  [optional]
 **_object** | **String** |  |  [optional]
+**cellId** | **String** |  |  [optional]
 **givenName** | **String** |  |  [optional]
 **surname** | **String** |  |  [optional]
 **email** | **String** |  |  [optional]

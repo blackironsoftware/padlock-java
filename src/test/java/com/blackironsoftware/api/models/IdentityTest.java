@@ -56,6 +56,14 @@ public class IdentityTest {
     }
 
     /**
+     * Test the property 'cellId'
+     */
+    @Test
+    public void cellIdTest() {
+        // TODO: test cellId
+    }
+
+    /**
      * Test the property 'givenName'
      */
     @Test
