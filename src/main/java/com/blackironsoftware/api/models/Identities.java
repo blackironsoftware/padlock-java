@@ -15,7 +15,7 @@ package com.blackironsoftware.api.models;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.blackironsoftware.api.models.Role;
+import com.blackironsoftware.api.models.Identity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -27,22 +27,22 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * Roles
+ * Identities
  */
 @JsonPropertyOrder({
-  Roles.JSON_PROPERTY_NEXT_PAGE_TOKEN,
-  Roles.JSON_PROPERTY_ITEMS
+  Identities.JSON_PROPERTY_NEXT_PAGE_TOKEN,
+  Identities.JSON_PROPERTY_ITEMS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-06T18:26:00.849569-05:00[America/New_York]")
-public class Roles {
+public class Identities {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
   private String nextPageToken;
 
   public static final String JSON_PROPERTY_ITEMS = "items";
-  private List<Role> items = null;
+  private List<Identity> items = null;
 
 
-  public Roles nextPageToken(String nextPageToken) {
+  public Identities nextPageToken(String nextPageToken) {
     
     this.nextPageToken = nextPageToken;
     return this;
@@ -67,15 +67,15 @@ public class Roles {
   }
 
 
-  public Roles items(List<Role> items) {
+  public Identities items(List<Identity> items) {
     
     this.items = items;
     return this;
   }
 
-  public Roles addItemsItem(Role itemsItem) {
+  public Identities addItemsItem(Identity itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<Role>();
+      this.items = new ArrayList<Identity>();
     }
     this.items.add(itemsItem);
     return this;
@@ -90,12 +90,12 @@ public class Roles {
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<Role> getItems() {
+  public List<Identity> getItems() {
     return items;
   }
 
 
-  public void setItems(List<Role> items) {
+  public void setItems(List<Identity> items) {
     this.items = items;
   }
 
@@ -108,9 +108,9 @@ public class Roles {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Roles roles = (Roles) o;
-    return Objects.equals(this.nextPageToken, roles.nextPageToken) &&
-        Objects.equals(this.items, roles.items);
+    Identities identities = (Identities) o;
+    return Objects.equals(this.nextPageToken, identities.nextPageToken) &&
+        Objects.equals(this.items, identities.items);
   }
 
   @Override
@@ -122,7 +122,7 @@ public class Roles {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Roles {\n");
+    sb.append("class Identities {\n");
     sb.append("    nextPageToken: ").append(toIndentedString(nextPageToken)).append("\n");
     sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("}");

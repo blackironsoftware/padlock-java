@@ -24,16 +24,16 @@ import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * Contact
+ * CreateIdentityInput
  */
 @JsonPropertyOrder({
-  Contact.JSON_PROPERTY_GIVEN_NAME,
-  Contact.JSON_PROPERTY_SURNAME,
-  Contact.JSON_PROPERTY_EMAIL,
-  Contact.JSON_PROPERTY_PHONE
+  CreateIdentityInput.JSON_PROPERTY_GIVEN_NAME,
+  CreateIdentityInput.JSON_PROPERTY_SURNAME,
+  CreateIdentityInput.JSON_PROPERTY_EMAIL,
+  CreateIdentityInput.JSON_PROPERTY_PHONE
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-06T18:26:00.849569-05:00[America/New_York]")
-public class Contact {
+public class CreateIdentityInput {
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
   private String givenName;
 
@@ -47,7 +47,7 @@ public class Contact {
   private String phone;
 
 
-  public Contact givenName(String givenName) {
+  public CreateIdentityInput givenName(String givenName) {
     
     this.givenName = givenName;
     return this;
@@ -72,7 +72,7 @@ public class Contact {
   }
 
 
-  public Contact surname(String surname) {
+  public CreateIdentityInput surname(String surname) {
     
     this.surname = surname;
     return this;
@@ -97,7 +97,7 @@ public class Contact {
   }
 
 
-  public Contact email(String email) {
+  public CreateIdentityInput email(String email) {
     
     this.email = email;
     return this;
@@ -122,7 +122,7 @@ public class Contact {
   }
 
 
-  public Contact phone(String phone) {
+  public CreateIdentityInput phone(String phone) {
     
     this.phone = phone;
     return this;
@@ -155,11 +155,11 @@ public class Contact {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Contact contact = (Contact) o;
-    return Objects.equals(this.givenName, contact.givenName) &&
-        Objects.equals(this.surname, contact.surname) &&
-        Objects.equals(this.email, contact.email) &&
-        Objects.equals(this.phone, contact.phone);
+    CreateIdentityInput createIdentityInput = (CreateIdentityInput) o;
+    return Objects.equals(this.givenName, createIdentityInput.givenName) &&
+        Objects.equals(this.surname, createIdentityInput.surname) &&
+        Objects.equals(this.email, createIdentityInput.email) &&
+        Objects.equals(this.phone, createIdentityInput.phone);
   }
 
   @Override
@@ -171,7 +171,7 @@ public class Contact {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Contact {\n");
+    sb.append("class CreateIdentityInput {\n");
     sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
     sb.append("    surname: ").append(toIndentedString(surname)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
