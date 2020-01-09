@@ -13,7 +13,6 @@
 
 package com.blackironsoftware.api;
 
-import com.blackironsoftware.ApiException;
 import com.blackironsoftware.api.models.Client;
 import com.blackironsoftware.api.models.Clients;
 import com.blackironsoftware.api.models.CreateClientInput;
@@ -44,7 +43,7 @@ public class ClientsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createClientTest() throws ApiException {
+    public void createClientTest() {
         String cellId = null;
         CreateClientInput createClientInput = null;
         Client response = api.createClient(cellId, createClientInput);
@@ -61,7 +60,7 @@ public class ClientsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteClientTest() throws ApiException {
+    public void deleteClientTest() {
         String cellId = null;
         String clientId = null;
         api.deleteClient(cellId, clientId);
@@ -78,7 +77,7 @@ public class ClientsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getClientTest() throws ApiException {
+    public void getClientTest() {
         String cellId = null;
         String clientId = null;
         Client response = api.getClient(cellId, clientId);
@@ -95,7 +94,7 @@ public class ClientsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listClientsTest() throws ApiException {
+    public void listClientsTest() {
         String cellId = null;
         Clients response = api.listClients(cellId);
 
@@ -111,7 +110,7 @@ public class ClientsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateClientTest() throws ApiException {
+    public void updateClientTest() {
         String cellId = null;
         String clientId = null;
         Client client = null;

@@ -13,7 +13,6 @@
 
 package com.blackironsoftware.api;
 
-import com.blackironsoftware.ApiException;
 import com.blackironsoftware.api.models.Cell;
 import com.blackironsoftware.api.models.Cells;
 import com.blackironsoftware.api.models.CreateCellInput;
@@ -44,7 +43,7 @@ public class CellsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createCellTest() throws ApiException {
+    public void createCellTest() {
         CreateCellInput createCellInput = null;
         Cell response = api.createCell(createCellInput);
 
@@ -60,7 +59,7 @@ public class CellsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteCellTest() throws ApiException {
+    public void deleteCellTest() {
         String cellId = null;
         api.deleteCell(cellId);
 
@@ -76,7 +75,7 @@ public class CellsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getCellTest() throws ApiException {
+    public void getCellTest() {
         String cellId = null;
         Cell response = api.getCell(cellId);
 
@@ -92,7 +91,7 @@ public class CellsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listCellsTest() throws ApiException {
+    public void listCellsTest() {
         Integer pageSize = null;
         String pageToken = null;
         Cells response = api.listCells(pageSize, pageToken);
@@ -109,7 +108,7 @@ public class CellsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateCellTest() throws ApiException {
+    public void updateCellTest() {
         String cellId = null;
         Cell cell = null;
         Cell response = api.updateCell(cellId, cell);

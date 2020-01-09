@@ -13,7 +13,6 @@
 
 package com.blackironsoftware.api;
 
-import com.blackironsoftware.ApiException;
 import com.blackironsoftware.api.models.AuthenticateInput;
 import com.blackironsoftware.api.models.AuthenticateOutput;
 import com.blackironsoftware.api.models.CreateIdentityInput;
@@ -46,7 +45,7 @@ public class IdentitiesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void authenticateTest() throws ApiException {
+    public void authenticateTest() {
         String cellId = null;
         AuthenticateInput authenticateInput = null;
         AuthenticateOutput response = api.authenticate(cellId, authenticateInput);
@@ -63,7 +62,7 @@ public class IdentitiesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createIdentityTest() throws ApiException {
+    public void createIdentityTest() {
         String cellId = null;
         CreateIdentityInput createIdentityInput = null;
         Identity response = api.createIdentity(cellId, createIdentityInput);
@@ -80,7 +79,7 @@ public class IdentitiesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteIdentityTest() throws ApiException {
+    public void deleteIdentityTest() {
         String cellId = null;
         String identityId = null;
         api.deleteIdentity(cellId, identityId);
@@ -97,7 +96,7 @@ public class IdentitiesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getIdentityTest() throws ApiException {
+    public void getIdentityTest() {
         String cellId = null;
         String identityId = null;
         Identity response = api.getIdentity(cellId, identityId);
@@ -114,7 +113,7 @@ public class IdentitiesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listIdentitiesTest() throws ApiException {
+    public void listIdentitiesTest() {
         String cellId = null;
         Identities response = api.listIdentities(cellId);
 
@@ -130,7 +129,7 @@ public class IdentitiesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateIdentityTest() throws ApiException {
+    public void updateIdentityTest() {
         String cellId = null;
         String identityId = null;
         Identity identity = null;

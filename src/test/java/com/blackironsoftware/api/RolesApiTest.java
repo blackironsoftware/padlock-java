@@ -13,7 +13,6 @@
 
 package com.blackironsoftware.api;
 
-import com.blackironsoftware.ApiException;
 import com.blackironsoftware.api.models.CreateRoleInput;
 import com.blackironsoftware.api.models.Error;
 import com.blackironsoftware.api.models.Role;
@@ -44,7 +43,7 @@ public class RolesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createRoleTest() throws ApiException {
+    public void createRoleTest() {
         String cellId = null;
         CreateRoleInput createRoleInput = null;
         Role response = api.createRole(cellId, createRoleInput);
@@ -61,7 +60,7 @@ public class RolesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteRoleTest() throws ApiException {
+    public void deleteRoleTest() {
         String cellId = null;
         String roleId = null;
         api.deleteRole(cellId, roleId);
@@ -78,7 +77,7 @@ public class RolesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getRoleTest() throws ApiException {
+    public void getRoleTest() {
         String cellId = null;
         String roleId = null;
         Role response = api.getRole(cellId, roleId);
@@ -95,7 +94,7 @@ public class RolesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listRolesTest() throws ApiException {
+    public void listRolesTest() {
         String cellId = null;
         Roles response = api.listRoles(cellId);
 

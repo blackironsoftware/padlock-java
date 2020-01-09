@@ -1,11 +1,6 @@
 package com.blackironsoftware.api;
 
-import com.blackironsoftware.ApiException;
 import com.blackironsoftware.ApiClient;
-import com.blackironsoftware.Configuration;
-import com.blackironsoftware.Pair;
-
-import javax.ws.rs.core.GenericType;
 
 import com.blackironsoftware.api.models.Cell;
 import com.blackironsoftware.api.models.Cells;
@@ -13,239 +8,331 @@ import com.blackironsoftware.api.models.CreateCellInput;
 import com.blackironsoftware.api.models.Error;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-06T18:39:58.739242-05:00[America/New_York]")
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T17:34:25.627035-05:00[America/New_York]")
+@Component("com.blackironsoftware.api.CellsApi")
 public class CellsApi {
-  private ApiClient apiClient;
+    private ApiClient apiClient;
 
-  public CellsApi() {
-    this(Configuration.getDefaultApiClient());
-  }
-
-  public CellsApi(ApiClient apiClient) {
-    this.apiClient = apiClient;
-  }
-
-  public ApiClient getApiClient() {
-    return apiClient;
-  }
-
-  public void setApiClient(ApiClient apiClient) {
-    this.apiClient = apiClient;
-  }
-
-  /**
-   * Create a cell
-   * 
-   * @param createCellInput  (optional)
-   * @return a {@code Cell}
-   * @throws ApiException if fails to make API call
-   */
-  public Cell createCell(CreateCellInput createCellInput) throws ApiException {
-    Object localVarPostBody = createCellInput;
-    
-    // create path and map variables
-    String localVarPath = "/cells".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
-    GenericType<Cell> localVarReturnType = new GenericType<Cell>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-      }
-  /**
-   * Deletes a cell
-   * 
-   * @param cellId Cell ID (required)
-   * @throws ApiException if fails to make API call
-   */
-  public void deleteCell(String cellId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'cellId' is set
-    if (cellId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cellId' when calling deleteCell");
+    public CellsApi() {
+        this(new ApiClient());
     }
-    
-    // create path and map variables
-    String localVarPath = "/cells/{cellId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
-
-    apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
-  }
-  /**
-   * Retrieve a cell
-   * 
-   * @param cellId Cell ID (required)
-   * @return a {@code Cell}
-   * @throws ApiException if fails to make API call
-   */
-  public Cell getCell(String cellId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'cellId' is set
-    if (cellId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cellId' when calling getCell");
+    @Autowired
+    public CellsApi(ApiClient apiClient) {
+        this.apiClient = apiClient;
     }
-    
-    // create path and map variables
-    String localVarPath = "/cells/{cellId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
-    GenericType<Cell> localVarReturnType = new GenericType<Cell>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-      }
-  /**
-   * Retrieves a list of cells
-   * 
-   * @param pageSize The number of items to return (optional)
-   * @param pageToken The page token that controls what page of items to return (optional)
-   * @return a {@code Cells}
-   * @throws ApiException if fails to make API call
-   */
-  public Cells listCells(Integer pageSize, String pageToken) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/cells".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_token", pageToken));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
-    GenericType<Cells> localVarReturnType = new GenericType<Cells>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-      }
-  /**
-   * Update a cell
-   * 
-   * @param cellId Cell ID (required)
-   * @param cell  (optional)
-   * @return a {@code Cell}
-   * @throws ApiException if fails to make API call
-   */
-  public Cell updateCell(String cellId, Cell cell) throws ApiException {
-    Object localVarPostBody = cell;
-    
-    // verify the required parameter 'cellId' is set
-    if (cellId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cellId' when calling updateCell");
+    public ApiClient getApiClient() {
+        return apiClient;
     }
-    
-    // create path and map variables
-    String localVarPath = "/cells/{cellId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cellId" + "\\}", apiClient.escapeString(cellId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    public void setApiClient(ApiClient apiClient) {
+        this.apiClient = apiClient;
+    }
 
+    /**
+     * Create a cell
+     * 
+     * <p><b>201</b> - Everything worked as expected
+     * <p><b>400</b> - The request was unacceptable, often due to missing a required parameter.
+     * <p><b>401</b> - Unauthorized  No valid API key provided.
+     * <p><b>403</b> - The API key doesn&#39;t have permissions to perform the request.
+     * <p><b>500</b> - Something went wrong on Black Iron Software&#39;s end. (These are rare.)
+     * @param createCellInput  (optional)
+     * @return Cell
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Cell createCell(CreateCellInput createCellInput) throws RestClientException {
+        return createCellWithHttpInfo(createCellInput).getBody();
+    }
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    /**
+     * Create a cell
+     * 
+     * <p><b>201</b> - Everything worked as expected
+     * <p><b>400</b> - The request was unacceptable, often due to missing a required parameter.
+     * <p><b>401</b> - Unauthorized  No valid API key provided.
+     * <p><b>403</b> - The API key doesn&#39;t have permissions to perform the request.
+     * <p><b>500</b> - Something went wrong on Black Iron Software&#39;s end. (These are rare.)
+     * @param createCellInput  (optional)
+     * @return ResponseEntity&lt;Cell&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<Cell> createCellWithHttpInfo(CreateCellInput createCellInput) throws RestClientException {
+        Object postBody = createCellInput;
+        
+        String path = apiClient.expandPath("/cells", Collections.<String, Object>emptyMap());
 
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders headerParams = new HttpHeaders();
+        final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
 
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
+        final String[] accepts = { 
+            "application/json"
+        };
+        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
+        final String[] contentTypes = { 
+            "application/json"
+        };
+        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    GenericType<Cell> localVarReturnType = new GenericType<Cell>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-      }
+        String[] authNames = new String[] { "bearerAuth" };
+
+        ParameterizedTypeReference<Cell> returnType = new ParameterizedTypeReference<Cell>() {};
+        return apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+    }
+    /**
+     * Deletes a cell
+     * 
+     * <p><b>204</b> - xxx
+     * <p><b>401</b> - Unauthorized  No valid API key provided.
+     * <p><b>403</b> - The API key doesn&#39;t have permissions to perform the request.
+     * <p><b>404</b> - The requested resource doesn&#39;t exist.
+     * <p><b>500</b> - Something went wrong on Black Iron Software&#39;s end. (These are rare.)
+     * @param cellId Cell ID (required)
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public void deleteCell(String cellId) throws RestClientException {
+        deleteCellWithHttpInfo(cellId);
+    }
+
+    /**
+     * Deletes a cell
+     * 
+     * <p><b>204</b> - xxx
+     * <p><b>401</b> - Unauthorized  No valid API key provided.
+     * <p><b>403</b> - The API key doesn&#39;t have permissions to perform the request.
+     * <p><b>404</b> - The requested resource doesn&#39;t exist.
+     * <p><b>500</b> - Something went wrong on Black Iron Software&#39;s end. (These are rare.)
+     * @param cellId Cell ID (required)
+     * @return ResponseEntity&lt;Void&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<Void> deleteCellWithHttpInfo(String cellId) throws RestClientException {
+        Object postBody = null;
+        
+        // verify the required parameter 'cellId' is set
+        if (cellId == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'cellId' when calling deleteCell");
+        }
+        
+        // create path and map variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("cellId", cellId);
+        String path = apiClient.expandPath("/cells/{cellId}", uriVariables);
+
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders headerParams = new HttpHeaders();
+        final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
+
+        final String[] accepts = { 
+            "application/json"
+        };
+        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
+        final String[] contentTypes = { };
+        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
+
+        String[] authNames = new String[] { "bearerAuth" };
+
+        ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
+        return apiClient.invokeAPI(path, HttpMethod.DELETE, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+    }
+    /**
+     * Retrieve a cell
+     * 
+     * <p><b>200</b> - Everything worked as expected
+     * <p><b>401</b> - Unauthorized  No valid API key provided.
+     * <p><b>403</b> - The API key doesn&#39;t have permissions to perform the request.
+     * <p><b>404</b> - The requested resource doesn&#39;t exist.
+     * <p><b>500</b> - Something went wrong on Black Iron Software&#39;s end. (These are rare.)
+     * @param cellId Cell ID (required)
+     * @return Cell
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Cell getCell(String cellId) throws RestClientException {
+        return getCellWithHttpInfo(cellId).getBody();
+    }
+
+    /**
+     * Retrieve a cell
+     * 
+     * <p><b>200</b> - Everything worked as expected
+     * <p><b>401</b> - Unauthorized  No valid API key provided.
+     * <p><b>403</b> - The API key doesn&#39;t have permissions to perform the request.
+     * <p><b>404</b> - The requested resource doesn&#39;t exist.
+     * <p><b>500</b> - Something went wrong on Black Iron Software&#39;s end. (These are rare.)
+     * @param cellId Cell ID (required)
+     * @return ResponseEntity&lt;Cell&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<Cell> getCellWithHttpInfo(String cellId) throws RestClientException {
+        Object postBody = null;
+        
+        // verify the required parameter 'cellId' is set
+        if (cellId == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'cellId' when calling getCell");
+        }
+        
+        // create path and map variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("cellId", cellId);
+        String path = apiClient.expandPath("/cells/{cellId}", uriVariables);
+
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders headerParams = new HttpHeaders();
+        final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
+
+        final String[] accepts = { 
+            "application/json"
+        };
+        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
+        final String[] contentTypes = { };
+        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
+
+        String[] authNames = new String[] { "bearerAuth" };
+
+        ParameterizedTypeReference<Cell> returnType = new ParameterizedTypeReference<Cell>() {};
+        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+    }
+    /**
+     * Retrieves a list of cells
+     * 
+     * <p><b>200</b> - Everything worked as expected
+     * <p><b>401</b> - Unauthorized  No valid API key provided.
+     * <p><b>403</b> - The API key doesn&#39;t have permissions to perform the request.
+     * <p><b>500</b> - Something went wrong on Black Iron Software&#39;s end. (These are rare.)
+     * @param pageSize The number of items to return (optional)
+     * @param pageToken The page token that controls what page of items to return (optional)
+     * @return Cells
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Cells listCells(Integer pageSize, String pageToken) throws RestClientException {
+        return listCellsWithHttpInfo(pageSize, pageToken).getBody();
+    }
+
+    /**
+     * Retrieves a list of cells
+     * 
+     * <p><b>200</b> - Everything worked as expected
+     * <p><b>401</b> - Unauthorized  No valid API key provided.
+     * <p><b>403</b> - The API key doesn&#39;t have permissions to perform the request.
+     * <p><b>500</b> - Something went wrong on Black Iron Software&#39;s end. (These are rare.)
+     * @param pageSize The number of items to return (optional)
+     * @param pageToken The page token that controls what page of items to return (optional)
+     * @return ResponseEntity&lt;Cells&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<Cells> listCellsWithHttpInfo(Integer pageSize, String pageToken) throws RestClientException {
+        Object postBody = null;
+        
+        String path = apiClient.expandPath("/cells", Collections.<String, Object>emptyMap());
+
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders headerParams = new HttpHeaders();
+        final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
+
+        queryParams.putAll(apiClient.parameterToMultiValueMap(null, "page_size", pageSize));
+        queryParams.putAll(apiClient.parameterToMultiValueMap(null, "page_token", pageToken));
+
+        final String[] accepts = { 
+            "application/json"
+        };
+        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
+        final String[] contentTypes = { };
+        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
+
+        String[] authNames = new String[] { "bearerAuth" };
+
+        ParameterizedTypeReference<Cells> returnType = new ParameterizedTypeReference<Cells>() {};
+        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+    }
+    /**
+     * Update a cell
+     * 
+     * <p><b>200</b> - Everything worked as expected
+     * <p><b>400</b> - The request was unacceptable, often due to missing a required parameter.
+     * <p><b>401</b> - Unauthorized  No valid API key provided.
+     * <p><b>403</b> - The API key doesn&#39;t have permissions to perform the request.
+     * <p><b>404</b> - The requested resource doesn&#39;t exist.
+     * <p><b>500</b> - Something went wrong on Black Iron Software&#39;s end. (These are rare.)
+     * @param cellId Cell ID (required)
+     * @param cell  (optional)
+     * @return Cell
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Cell updateCell(String cellId, Cell cell) throws RestClientException {
+        return updateCellWithHttpInfo(cellId, cell).getBody();
+    }
+
+    /**
+     * Update a cell
+     * 
+     * <p><b>200</b> - Everything worked as expected
+     * <p><b>400</b> - The request was unacceptable, often due to missing a required parameter.
+     * <p><b>401</b> - Unauthorized  No valid API key provided.
+     * <p><b>403</b> - The API key doesn&#39;t have permissions to perform the request.
+     * <p><b>404</b> - The requested resource doesn&#39;t exist.
+     * <p><b>500</b> - Something went wrong on Black Iron Software&#39;s end. (These are rare.)
+     * @param cellId Cell ID (required)
+     * @param cell  (optional)
+     * @return ResponseEntity&lt;Cell&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<Cell> updateCellWithHttpInfo(String cellId, Cell cell) throws RestClientException {
+        Object postBody = cell;
+        
+        // verify the required parameter 'cellId' is set
+        if (cellId == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'cellId' when calling updateCell");
+        }
+        
+        // create path and map variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("cellId", cellId);
+        String path = apiClient.expandPath("/cells/{cellId}", uriVariables);
+
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders headerParams = new HttpHeaders();
+        final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
+
+        final String[] accepts = { 
+            "application/json"
+        };
+        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
+        final String[] contentTypes = { 
+            "application/json"
+        };
+        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
+
+        String[] authNames = new String[] { "bearerAuth" };
+
+        ParameterizedTypeReference<Cell> returnType = new ParameterizedTypeReference<Cell>() {};
+        return apiClient.invokeAPI(path, HttpMethod.PUT, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+    }
 }
